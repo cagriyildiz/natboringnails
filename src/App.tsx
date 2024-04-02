@@ -1,8 +1,12 @@
+import "./app.scss"
+
 function App() {
 
   return (
     <>
-      <h1>Hello World!</h1>
+      <section><a href="http://">Hello</a></section>
+      <section>Hello World!</section>
+      <section>Hello World!</section>
     </>
   )
 }
