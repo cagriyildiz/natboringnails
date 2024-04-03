@@ -1,12 +1,17 @@
 import "./app.scss"
+import Navbar from "./components/navbar/Navbar"
 
 function App() {
 
   return (
     <>
-      <section><a href="http://">Hello</a></section>
-      <section>Hello World!</section>
-      <section>Hello World!</section>
+      <section>
+        <Navbar />
+      </section>
+      <section>About</section>
+      <section>Treatments</section>
+      <section>Inspiration</section>
+      <section>Contact</section>
     </>
   )
 }
