@@ -5,13 +5,13 @@ function App() {
 
   return (
     <>
-      <section>
+      <section id="homepage">
         <Navbar />
       </section>
-      <section>About</section>
-      <section>Treatments</section>
-      <section>Inspiration</section>
-      <section>Contact</section>
+      <section id="about">About</section>
+      <section id="treatments">Treatments</section>
+      <section id="inspiration">Inspiration</section>
+      <section id="contact">Contact</section>
     </>
   )
 }
