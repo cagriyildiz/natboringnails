@@ -9,7 +9,11 @@
     padding-top: 50px;
     text-align: center;
     color: #b9f747;
-    font-size: 36px;
+
+    h1 {
+      font-size: 72px;
+      font-weight: 600;
+    }
 
     .progress-bar {
       height: 5px;
@@ -56,15 +60,17 @@
 
         h2 {
           font-size: 72px;
+          font-weight: 600;
         }
 
         h3 {
           font-size: 36px;
+          font-weight: 600;
         }
 
         p {
           color: white;
-          font-size: 20px;
+          font-size: 32px;
         }
 
         button {

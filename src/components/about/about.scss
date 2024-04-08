@@ -9,7 +9,11 @@
     padding-top: 50px;
     text-align: center;
     color: #4c00ce;
-    font-size: 36px;
+  }
+
+  h1 {
+    font-size: 72px;
+    font-weight: 600;
   }
 
   .container {
@@ -50,11 +54,12 @@
 
         h2 {
           font-size: 72px;
+          font-weight: 600;
         }
 
         p {
           color: black;
-          font-size: 20px;
+          font-size: 32px;         
         }
 
         button {
