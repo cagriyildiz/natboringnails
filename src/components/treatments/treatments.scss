@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .treatments {
   position: relative;
   background: #4c00ce;
@@ -10,9 +12,18 @@
     text-align: center;
     color: #b9f747;
 
+    @include mobile {
+      
+      padding-top: 25px;
+    }
+
     h1 {
       font-size: 72px;
       font-weight: 600;
+
+      @include mobile {
+        font-size: 48px;
+      }
     }
 
     .progress-bar {
@@ -39,9 +50,20 @@
       justify-content: center;
       gap: 50px;
 
+      @include mobile {
+        flex-direction: column;
+        margin-top: 120px;
+        gap: 20px;
+      }
+
       .img {
         flex: 1;
         height: 50%;
+
+        @include mobile {
+          width: 100%;
+          max-height: 300px;
+        }
 
         img {
           border-radius: 10% / 50%;
@@ -58,9 +80,20 @@
         flex-direction: column;
         gap: 30px;
 
+        @include mobile {
+          transform: none !important;
+          gap: 4px;
+          align-items: center;
+          text-align: center;
+        }
+
         h2 {
           font-size: 72px;
           font-weight: 600;
+
+          @include mobile {
+            font-size: 36px;
+          }
         }
 
         h3 {
@@ -71,6 +104,11 @@
         p {
           color: white;
           font-size: 32px;
+
+          @include mobile {
+            font-size: 20px;
+            margin: 0 20px;
+          }
         }
 
         button {
@@ -83,6 +121,11 @@
           margin-right: 20px;
           cursor: pointer;
           font-weight: 300;
+
+          @include mobile {
+            margin-right: unset;
+            margin-top: 20px;
+          }
         }
       }
     }

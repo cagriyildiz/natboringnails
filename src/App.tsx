@@ -13,9 +13,9 @@ function App() {
         <Hero />
       </section>
       <Treatments />
-      <About />
-      <section id="inspiration">Inspiration</section>
-      <section id="contact">Contact</section>
+      {/* <About /> */}
+      {/* <section id="inspiration">Inspiration</section> */}
+      {/* <section id="contact">Contact</section> */}
     </>
   )
 }
