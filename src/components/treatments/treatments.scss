@@ -13,8 +13,7 @@
     color: #b9f747;
 
     @include mobile {
-      
-      padding-top: 25px;
+      display: none;
     }
 
     h1 {
@@ -52,7 +51,6 @@
 
       @include mobile {
         flex-direction: column;
-        margin-top: 120px;
         gap: 20px;
       }
 
@@ -63,6 +61,7 @@
         @include mobile {
           width: 100%;
           max-height: 300px;
+          flex: unset;
         }
 
         img {
@@ -82,9 +81,10 @@
 
         @include mobile {
           transform: none !important;
-          gap: 4px;
+          gap: 10px;
           align-items: center;
           text-align: center;
+          flex: unset;
         }
 
         h2 {
@@ -92,7 +92,7 @@
           font-weight: 600;
 
           @include mobile {
-            font-size: 36px;
+            font-size: 48px;
           }
         }
 
@@ -106,7 +106,7 @@
           font-size: 32px;
 
           @include mobile {
-            font-size: 20px;
+            font-size: 28px;
             margin: 0 20px;
           }
         }
