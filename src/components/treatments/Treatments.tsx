@@ -11,7 +11,7 @@ const Treatment = ({ item }: { item: Item }) => {
     target: ref,
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+  const y = useTransform(scrollYProgress, [0, 1], [-600, 600]);
 
   return (
     <section>

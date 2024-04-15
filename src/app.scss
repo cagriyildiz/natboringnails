@@ -24,6 +24,15 @@ a {
     color: inherit;
 }
 
+p {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
 section {
     height: 100vh;
     scroll-snap-align: center;
@@ -31,6 +40,12 @@ section {
 
 @mixin mobile {
     @media (max-width: 738px) {
+        @content;
+    }
+}
+
+@mixin mobile-s {
+    @media (max-width: 375px) {
         @content;
     }
 }
@@ -43,6 +58,18 @@ section {
 
 @mixin desktop {
     @media (max-width: 1366px) {
+        @content;
+    }
+}
+
+@mixin desktop-large {
+    @media (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin desktop-4k {
+    @media (max-width: 1920px) {
         @content;
     }
 }
