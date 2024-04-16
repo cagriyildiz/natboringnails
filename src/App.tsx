@@ -13,7 +13,7 @@ function App() {
         <Hero />
       </section>
       <Treatments />
-      {/* <About /> */}
+      <About />
       {/* <section id="inspiration">Inspiration</section> */}
       {/* <section id="contact">Contact</section> */}
     </>

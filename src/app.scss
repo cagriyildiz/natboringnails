@@ -69,7 +69,7 @@ section {
 }
 
 @mixin desktop-4k {
-    @media (max-width: 1920px) {
+    @media (min-width: 1920px) {
         @content;
     }
 }
