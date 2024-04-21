@@ -67,6 +67,12 @@ section {
     }
 }
 
+@mixin desktop-xlarge {
+    @media (max-width: 1920px) {
+        @content;
+    }
+}
+
 @mixin desktop-4k {
     @media (min-width: 1920px) {
         @content;

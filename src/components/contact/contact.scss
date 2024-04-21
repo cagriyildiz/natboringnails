@@ -1,0 +1,142 @@
+@import "../../app.scss";
+
+.contact {
+  position: relative;
+  background: linear-gradient(180deg, #6357f7, #ee89cc);
+
+  .title {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  h1 {
+    font-size: 72px;
+    font-weight: 600;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .wrapper {
+      max-width: 1366px;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
+      .text {
+        @include desktop-xlarge {
+          display: none;
+        }
+
+        @include desktop-4k {
+          display: none;
+        }
+
+        @include tablet {
+          display: unset;
+        }
+
+        h1 {
+          font-size: 56px;
+
+          @include mobile-s {
+            font-size: 32px;
+          }
+        }
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 50px;
+        box-shadow: 0em 0 2em #dcc8c8;
+        border-radius: 2%;
+        width: 1000px;
+
+        @include tablet {
+          width: 800px;
+        }
+
+        @include mobile {
+          width: 400px;
+        }
+
+        @include desktop-large {
+          box-shadow: unset;
+          padding: 10px 50px;
+          gap: 20px;
+        }
+
+        .item {
+          label {
+            display: block;
+            margin-bottom: 10px;
+            color: #b9f747;
+            font-weight: 600;
+
+            @include mobile-s {
+              font-size: 18px;
+            }
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+
+            @include mobile-s {
+              font-size: 18px;
+            }
+          }
+
+          textarea {
+            resize: none;
+            height: 300px;
+
+            @include mobile-s {
+              height: 150px;
+            }
+          }
+
+          button {
+            width: 60%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+
+            background: linear-gradient(45deg, #6115ee, #cd15ee, #df0087);
+            color: white;
+            font-weight: 600;
+            box-shadow: 0em 0 2em #dcc8c8;
+          }
+        }
+      }
+
+
+    }
+  }
+}
