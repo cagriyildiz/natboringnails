@@ -40,6 +40,10 @@
       h2 {
         font-size: 30px;
         letter-spacing: 10px;
+
+        @include mobile {
+          margin-left: 10px
+        }
       }
 
       .action {
