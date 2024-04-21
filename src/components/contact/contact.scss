@@ -10,7 +10,6 @@
     left: 0;
     padding-top: 50px;
     text-align: center;
-    color: white;
 
     @include tablet {
       display: none;
@@ -103,6 +102,14 @@
             border-radius: 10px;
             padding: 10px;
             border: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+
+            &::placeholder {
+              font-family: "Amatic SC", sans-serif;
+              font-size: 24px;
+              font-weight: 600;
+          }  
 
             @include mobile-s {
               font-size: 18px;
@@ -135,8 +142,6 @@
           }
         }
       }
-
-
     }
   }
 }

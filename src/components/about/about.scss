@@ -110,8 +110,16 @@
           font-size: 36px;
           font-weight: 600;
 
+          @include desktop-xlarge {
+            display: none;
+          }
+  
           @include desktop-4k {
             display: none;
+          }
+  
+          @include desktop-large {
+            display: unset;
           }
 
           @include mobile-s {
