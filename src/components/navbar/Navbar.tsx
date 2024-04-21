@@ -13,9 +13,8 @@ function Navbar() {
           <div className="logo">Natboringnails</div>
         </motion.span>
         <div className="menu">
-          <a href="#about">About</a>
           <a href="#treatments">Treatments</a>
-          <a href="#inspiration">Inspiration</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
