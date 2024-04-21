@@ -11,7 +11,7 @@
     padding-top: 50px;
     text-align: center;
 
-    @include tablet {
+    @include desktop-large {
       display: none;
     }
   }
@@ -48,12 +48,14 @@
           display: none;
         }
 
-        @include tablet {
+        @include desktop-large {
           display: unset;
         }
 
         h1 {
-          font-size: 56px;
+          @include desktop {
+            font-size: 56px;
+          }
 
           @include mobile-s {
             font-size: 32px;
@@ -119,6 +121,10 @@
           textarea {
             resize: none;
             height: 300px;
+
+            @include desktop {
+              height: 250px;
+            }
 
             @include mobile-s {
               height: 150px;
