@@ -34,7 +34,7 @@ function Hero() {
           <motion.h1 variants={textVariants}>Nail Art Studio</motion.h1>
           <motion.div className="action" variants={textVariants}>
             <button className="primary">Book Now</button>
-            <button><a href="#contact">Contact Me</a></button>
+            <button>Contact Me</button>
           </motion.div>
           <a href="#treatments">
             <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="Scroll Down" />

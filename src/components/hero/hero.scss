@@ -43,28 +43,30 @@
       }
 
       .action {
+        display: flex;
+        gap: 20px;
+
+        @include mobile {
+          flex-direction: column;
+        }
+
         button {
           padding: 20px;
           border: 1px solid white;
           border-radius: 10px;
           background-color: transparent;
           color: white;
-          margin-right: 20px;
           cursor: pointer;
           font-weight: 300;
 
           @include mobile {
-            margin-right: 0;  
+            margin-right: 0;
           }
         }
 
         button.primary {
           color: black;
           background-color: white;
-
-          @include mobile {
-            margin-bottom: 10px;  
-          }
         }
       }
 
@@ -73,7 +75,7 @@
       }
     }
   }
-  
+
   .img {
     height: 100%;
     position: absolute;
