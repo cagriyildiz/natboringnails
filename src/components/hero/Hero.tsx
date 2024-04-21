@@ -36,7 +36,9 @@ function Hero() {
             <button className="primary">Book Now</button>
             <button><a href="#contact">Contact Me</a></button>
           </motion.div>
-          <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="Scroll Down" />
+          <a href="#treatments">
+            <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="Scroll Down" />
+          </a>
         </motion.div>
       </div>
       
