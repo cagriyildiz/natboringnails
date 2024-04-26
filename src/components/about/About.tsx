@@ -28,7 +28,7 @@ function About() {
         <div className="container">
           <div className="wrapper">
             <div className="img" ref={ref}>
-              <img src="/nathal5.png" alt="" />
+              <img src="/nathal.png" alt="" />
             </div>
             <motion.div className="text" style={{ y }}>
               <h3>About Me</h3>
