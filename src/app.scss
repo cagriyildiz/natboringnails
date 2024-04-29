@@ -57,6 +57,12 @@ section {
     }
 }
 
+@mixin mobile-xs {
+    @media (max-width: 315px) {
+        @content;
+    }
+}
+
 @mixin tablet {
     @media (max-width: 1024px) {
         @content;
