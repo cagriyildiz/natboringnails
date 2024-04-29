@@ -38,6 +38,10 @@ p {
 
 section {
     height: 100vh;
+    @media (max-width: 738px) {
+        height: unset;
+        min-height: 100vh;
+      }
     scroll-snap-align: center;
 }
 

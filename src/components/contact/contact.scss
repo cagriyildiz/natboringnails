@@ -29,6 +29,10 @@
     height: 100%;
     overflow: hidden;
 
+    @include mobile {
+      padding: 40px 0;
+    }
+
     .wrapper {
       max-width: 1366px;
       height: 100%;
