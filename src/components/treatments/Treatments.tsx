@@ -21,7 +21,7 @@ const Treatment = ({ item }: { item: Item }) => {
             <img src={item.img} alt="" />
           </div>
           <motion.div className="text" style={{ y }}>
-            <h2>{item.title}</h2>
+            <h2>{item.title} <span>{item.category}</span></h2>
             <h3>{item.price}</h3>
             <p>{item.desc}</p>
             <button>Book Now</button>
@@ -47,9 +47,9 @@ function Treatments() {
   });
 
   return (
-    <div id="treatments" className="treatments" ref={ref}>
+    <div id="nailmenu" className="nailmenu" ref={ref}>
       <div className="progress">
-        <h1>Treatments</h1>
+        <h1>Nail Menu</h1>
         <motion.div style={{ scaleX }} className="progress-bar"></motion.div>
       </div>
       {items.map((item, idx) => (<Treatment item={item} key={idx} />))}

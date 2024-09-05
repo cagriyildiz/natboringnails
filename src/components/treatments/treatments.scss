@@ -1,6 +1,6 @@
 @import "../../app.scss";
 
-.treatments {
+.nailmenu {
   position: relative;
   background: #58B36B;
 
@@ -101,6 +101,7 @@
         h2 {
           font-size: 72px;
           font-weight: 600;
+          color: #6326BA;
 
           @include mobile {
             font-size: 48px;
@@ -109,6 +110,12 @@
           @include mobile-s {
             font-size: 32px;
             margin: 0 20px;
+          }
+
+          span {
+            font-size: inherit;
+            font-weight: inherit;
+            color: #FAF8F1;
           }
         }
 

@@ -1,4 +1,5 @@
 export interface Item {
+  category: string;
   title: string;
   price: string;
   img: string;
@@ -7,45 +8,52 @@ export interface Item {
 
 export const items: Item[] = [
   {
-    title: "Gelpolish Manicure",
-    price: "€ 65",
+    category: "Treatment",
+    title: "Gel Polish",
+    price: "€ 45",
     img: "/treatments/gelpolish.jpg",
-    desc: "This is our basic treatment. Your nails will get an extended manicure. We take care of your cuticles using an e-file, file your nails in shape and paint your nails in the colour you love. When your nails are done, we nourish your cuticles with some oil and moisturise your hands with hand cream."
+    desc: "In this treatment we give you an extended manicure. This means cuticle care and filing your nails in your desired shape. We then paint them in the colour of your choice! You can also add nail art on top (see nail art menu)."
   },
   {
-    title: "BIAB Manicure",
-    price: "€ 75",
+    category: "Treatment",
+    title: "BIAB Natural",
+    price: "€ 60",
     img: "/treatments/biab.jpg",
-    desc: "The BIAB treatment is an excellent choice for those who want natural and strong nails. We take care of your cuticles with an e-file, file your nails in shape and paint your nails one by one with the BIAB colour you love. This treatment will take some time, we'll do your nails one by one. When your nails are done, we nourish your cuticles with some oil and moisturise your hands with hand cream."
+    desc: "The BIAB treatment is an excellent choice for those who want strong natural nails. It builds your nails in such a way that it allows them to grow without breaking! Of course this treatment includes our extended manicure."
   },
   {
-    title: "Basic Nail Art",
-    price: "€ 75",
+    category: "Nail Art",
+    title: "Basic",
+    price: "Price of treatment + € 10",
     img: "/treatments/basic.jpg",
-    desc: "This is our basic treatment. Your nails will get an extended manicure. We take care of your cuticles using an e-file, file your nails in shape and paint your nails in the colour you love. When your nails are done, we nourish your cuticles with some oil and moisturise your hands with hand cream."
+    desc: "This nail art can be multiple colours, a dot, some foils, glazed look or some simple line work. For inspiration swipe through the pictures or check out my instagram page."
   },
   {
-    title: "Advanced Nail Art",
-    price: "€ 85",
+    category: "Nail Art",
+    title: "Medium",
+    price: "Price of treatment + € 15",
     img: "/treatments/advanced.jpg",
-    desc: "Usually two colours; colour blocking, graphic design, foils, Picasso and simple animal prints. Advanced nail art is including the complete manicure."
+    desc: "This nail art can be a french, coloured chrome or a simple airbrush design. For inspiration swipe through the pictures or check out my instagram page."
   },
   {
-    title: "Ultimate Nail Art",
-    price: "€ 95",
+    category: "Nail Art",
+    title: "Extra Extra",
+    price: "Price of treatment + € 20",
     img: "/treatments/ultimate.jpg",
-    desc: "A mix of basic & advanced with more colours and drawings. Think of flames, abstract art, eyes, animal prints. Ultimate nail art is including the complete manicure."
+    desc: "With the extra extra nail art we go all out! This nail art can be a combination of different styles like french, chrome or airbrush. But can also include 3D or gems."
   },
   {
-    title: "Next Level Nail Art",
-    price: "€ 105",
+    category: "Nail Art",
+    title: "Custom",
+    price: "Price of treatment + € 30",
     img: "/treatments/nextlevel.jpg",
-    desc: "To keep your nails healthy as possible we require 15 minutes in addition to your appointment to properly remove the gel."
+    desc: "This option is for those who want something super intricate or personalized. You can always contact me to discuss your ideas!"
   },
   {
+    category: "",
     title: "Removal",
     price: "€ 15",
     img: "/treatments/removal.jpg",
-    desc: "To keep your nails healthy as possible we require 15 minutes in addition to your appointment to properly remove the gel."
+    desc: "To keep your nails in the best shape, I use a soak off method where I first file a small layer of product. And then soak the product in a remover which makes it easy to take off."
   },
 ];
