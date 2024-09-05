@@ -2,7 +2,7 @@
 
 .contact {
   position: relative;
-  background: linear-gradient(180deg, #6357f7, #ee89cc);
+  background: linear-gradient(180deg, #58B36B, #6326BA);
 
   .title {
     position: sticky;
@@ -98,7 +98,7 @@
           label {
             display: block;
             margin-bottom: 10px;
-            color: #b9f747;
+            color: white;
             font-weight: 600;
 
             @include mobile-s {
@@ -149,10 +149,10 @@
             justify-content: center;
             cursor: pointer;
 
-            background: linear-gradient(45deg, #6115ee, #cd15ee, #df0087);
+            background: linear-gradient(145deg, #6115ee, #48934F);
             color: white;
             font-weight: 600;
-            box-shadow: 0em 0 2em #dcc8c8;
+            box-shadow: 0em 0 2em #C4B0F6;
           }
         }
       }

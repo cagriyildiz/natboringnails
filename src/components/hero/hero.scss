@@ -2,7 +2,7 @@
 
 .hero {
   height: calc(100vh - 100px);
-  background: linear-gradient(180deg, #cf0080, #4c00ce);
+  background: linear-gradient(180deg, #6326BA, #58B36B);
   overflow: hidden;
   position: relative;
 
@@ -30,7 +30,6 @@
       h1 {
         font-size: 88px;
         font-weight: 600;
-        color: #b9f747;
 
         @include mobile {
           font-size: 56px;

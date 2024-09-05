@@ -2,7 +2,7 @@
 
 .treatments {
   position: relative;
-  background: #4c00ce;
+  background: #58B36B;
 
   .progress {
     position: sticky;
@@ -10,7 +10,7 @@
     left: 0;
     padding-top: 50px;
     text-align: center;
-    color: #b9f747;
+    color: #FAF8F1;
 
     @include desktop-large {
       display: none;
@@ -31,7 +31,7 @@
 
     .progress-bar {
       height: 5px;
-      background: #b9f747;
+      background: #FAF8F1;
       border-radius: 10px;
     }
   }
@@ -84,7 +84,7 @@
       }
 
       .text {
-        color: #f74761;
+        color: #6326BA;
         flex: 1;
         display: flex;
         flex-direction: column;

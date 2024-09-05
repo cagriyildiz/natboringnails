@@ -2,7 +2,7 @@
 
 .about {
   position: relative;
-  background: linear-gradient(180deg, #47f784, #e5feeb);
+  background: linear-gradient(180deg, #6326BA, #C4B0F6);
 
   section {
     @include mobile {
@@ -20,7 +20,7 @@
     left: 0;
     padding-top: 50px;
     text-align: center;
-    color: #4c00ce;
+    color: #58B36B;
 
     @include desktop-large {
       display: none;
@@ -81,7 +81,7 @@
       }
 
       .text {
-        color: #f747b8;
+        color: #38ca46;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -110,7 +110,7 @@
         }
 
         h3 {
-          color: #4c00ce;
+          color: #38ca46;
           font-size: 36px;
           font-weight: 600;
 
@@ -133,7 +133,7 @@
         }
 
         p {
-          color: black;
+          color: #faf8f1b4;
           font-size: 18px;
 
           @include mobile {
@@ -148,7 +148,7 @@
 
         .social {
           a {
-            color: #ee6002;
+            color: #6326BA;
             font-weight: 600;
             float: right;
             margin-right: 50px;
