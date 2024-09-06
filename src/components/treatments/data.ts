@@ -52,7 +52,7 @@ export const items: Item[] = [
   {
     category: "",
     title: "Removal",
-    price: "€ 15",
+    price: "€ 10",
     img: "/treatments/removal.jpg",
     desc: "To keep your nails in the best shape, I use a soak off method where I first file a small layer of product. And then soak the product in a remover which makes it easy to take off."
   },
