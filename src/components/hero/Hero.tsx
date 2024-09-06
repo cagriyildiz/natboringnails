@@ -33,7 +33,9 @@ function Hero() {
           <motion.h2 variants={textVariants}>Natboringnails</motion.h2>
           <motion.h1 variants={textVariants}>Nail Art Studio</motion.h1>
           <motion.div className="action" variants={textVariants}>
-            <button className="primary">Book Now</button>
+            <a href="https://natboringnails.salonized.com/widget_bookings/new">
+              <button className="primary">Book Now</button>
+            </a>
             <a href="#contact"><button>Contact Me</button></a>
           </motion.div>
           <a href="#treatments">
