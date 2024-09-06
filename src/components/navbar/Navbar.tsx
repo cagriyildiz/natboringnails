@@ -11,7 +11,6 @@ function Navbar() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}>
           <div className="logo">
-            
             <img src="/public/logo-white.png" alt="" />
           </div>
         </motion.span>
