@@ -2,7 +2,11 @@
 
 .navbar {
   background-color: #6326BA;
-  height: 100px;
+  padding: 10px 50px;
+
+  @include mobile {
+    height: 100px;
+  }
 
   .wrapper {
     height: 100%;
@@ -18,7 +22,10 @@
     }
 
     .logo {
-      font-size: 36px;
+      margin: auto;
+      img {
+        width: 96px;
+      }
     }
 
     span {

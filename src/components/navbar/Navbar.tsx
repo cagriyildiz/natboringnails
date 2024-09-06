@@ -10,7 +10,10 @@ function Navbar() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}>
-          <div className="logo">Natboringnails</div>
+          <div className="logo">
+            
+            <img src="/public/logo-white.png" alt="" />
+          </div>
         </motion.span>
         <div className="menu">
           <a href="#nailmenu">Nail Menu</a>
