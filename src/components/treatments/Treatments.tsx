@@ -24,7 +24,9 @@ const Treatment = ({ item }: { item: Item }) => {
             <h2>{item.title} <span>{item.category}</span></h2>
             <h3>{item.price}</h3>
             <p>{item.desc}</p>
-            <button>Book Now</button>
+            <a href="https://natboringnails.salonized.com/widget_bookings/new">
+              <button className="primary">Book Now</button>
+            </a>
           </motion.div>
         </div>
       </div>
