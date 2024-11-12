@@ -142,28 +142,6 @@
             margin: 0 20px;
           }
         }
-
-        button {
-          width: 200px;
-          padding: 20px;
-          border: 1px solid white;
-          border-radius: 10px;
-          background-color: transparent;
-          color: white;
-          margin-right: 20px;
-          cursor: pointer;
-          font-weight: 300;
-
-          @include mobile {
-            margin-right: unset;
-            margin-top: 20px;
-          }
-
-          @include mobile-s {
-            font-size: 18px;
-            margin-top: 20px;
-          }
-        }
       }
     }
   }
