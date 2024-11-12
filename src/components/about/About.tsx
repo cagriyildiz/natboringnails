@@ -1,7 +1,6 @@
 import './about.scss'
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion"
 
 const InstagramSvg = () => {
   return (
@@ -12,12 +11,6 @@ const InstagramSvg = () => {
 function About() {
 
   const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [-600, 600]);
 
   return (
     <div id="about" className="about">
@@ -30,7 +23,7 @@ function About() {
             <div className="img" ref={ref}>
               <img src="/nathal.png" alt="" />
             </div>
-            <motion.div className="text" style={{ y }}>
+            <div className="text">
               <h3>About Me</h3>
               <h2>Nathalja Nebbeling</h2>
               <p>
@@ -46,7 +39,7 @@ function About() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
