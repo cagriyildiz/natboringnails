@@ -18,6 +18,7 @@ function Navbar() {
           <a href="#nailmenu">Nail Menu</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
+          <a href="#location">Location</a>
         </div>
       </div>
     </div>

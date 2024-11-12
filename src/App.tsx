@@ -4,6 +4,7 @@ import Hero from "./components/hero/Hero"
 import Navbar from "./components/navbar/Navbar"
 import Treatments from "./components/treatments/Treatments"
 import Contact from "./components/contact/Contact"
+import Location from "./components/location/Location"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <About />
       {/* <section id="inspiration">Inspiration</section> */}
       <Contact />
+      <Location />
     </>
   )
 }
