@@ -3,6 +3,7 @@ import Hero from "../components/hero/Hero";
 import Treatments from "../components/treatments/Treatments";
 import About from "../components/about/About";
 import Location from "../components/location/Location";
+import BookingWidget from "@/components/widget/BookingWidget";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Treatments />
       <About />
       <Location />
+      <BookingWidget />
     </>
   );
 }

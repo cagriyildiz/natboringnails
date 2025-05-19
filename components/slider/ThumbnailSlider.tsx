@@ -12,11 +12,11 @@ interface ThumbnailSliderProps {
 }
 
 function ThumbnailSlider({images}: ThumbnailSliderProps) {
-  const OPTIONS: EmblaOptionsType = {loop: true};
+  const OPTIONS: EmblaOptionsType = {loop: false};
   return (
     <>
-      <div className=' mx-auto'>
-        <Carousel options={OPTIONS} className='relative' isAutoPlay={true}>
+      <div className='mx-auto'>
+        <Carousel options={OPTIONS} className='relative' isAutoPlay={false}>
           <SliderContainer className='gap-2'>
             {images.map((i, index) => (
               <Slider
@@ -24,13 +24,6 @@ function ThumbnailSlider({images}: ThumbnailSliderProps) {
                 className='min-h-100 max-h-100 md:min-h-148 md:max-h-148 w-full'
                 thumnailSrc={i}
               >
-                {/*<Image*/}
-                {/*  src={i}*/}
-                {/*  width={1400}*/}
-                {/*  height={800}*/}
-                {/*  alt='image'*/}
-                {/*  className='h-full object-cover rounded-lg w-full'*/}
-                {/*/>*/}
                 <Image
                   src={i}
                   alt={"i.title"}
