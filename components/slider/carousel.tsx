@@ -387,7 +387,7 @@ export const ThumsSlider: React.FC = () => {
         {slidesrArr.map((slide, index) => (
           <div
             key={`thumb-${index}`}
-            className={`min-w-0 w-full xl:h-24 aspect-auto border-2 rounded-md ${
+            className={`cursor-pointer min-w-0 w-full xl:h-24 aspect-auto border-2 rounded-md ${
               index === selectedIndex
                 ? 'opacity-100'
                 : 'border-transparent opacity-30'
