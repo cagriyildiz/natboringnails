@@ -1,39 +1,38 @@
 {
-  "name": "natboringnails",
+  "name": "natboringnails-web",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@tabler/icons-react": "^3.21.0",
+    "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.11",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.3.5",
-    "sass": "^1.72.0",
-    "tailwind-merge": "^2.5.4"
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-class-names": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.12.1",
+    "motion": "^12.12.1",
+    "next": "15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.14",
-    "typescript": "^5.2.2",
-    "vite": "^6.3.5",
-    "vite-plugin-sitemap": "^0.8.2"
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5"
   }
 }
