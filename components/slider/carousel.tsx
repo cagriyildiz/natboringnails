@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 'use client';
 import React, {
   ReactNode,
@@ -11,14 +9,14 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import Autoplay from 'embla-carousel-autoplay';
 import {
   EmblaCarouselType,
   EmblaEventType,
   EmblaOptionsType,
 } from 'embla-carousel';
-import useEmblaCarousel from 'embla-carousel-react';
+import useEmblaCarousel, {EmblaViewportRefType} from 'embla-carousel-react';
 import ClassNames from 'embla-carousel-class-names';
 import { cn } from '@/lib/utils';
 type UseDotButtonType = {
@@ -40,21 +38,16 @@ interface ThumbnailSlide {
   alt: string;
 }
 interface CarouselContextType {
-  prevBtnDisabled: boolean;
-  nextBtnDisabled: boolean;
-  onPrevButtonClick: () => void;
-  onNextButtonClick: () => void;
-  selectedIndex: any;
-  scrollSnaps: any;
-  onDotButtonClick: any;
-  scrollProgress: any;
-  selectedSnap: any;
-  snapCount: any;
+  selectedIndex: number;
+  scrollSnaps: number[];
+  scrollProgress: number;
+  selectedSnap: number;
+  snapCount: number;
   isScale: boolean;
   slidesrArr: ThumbnailSlide[];
-  setSlidesArr: any;
-  emblaThumbsRef: any;
-  onThumbClick: any;
+  setSlidesArr: React.Dispatch<React.SetStateAction<ThumbnailSlide[]>>;
+  emblaThumbsRef: EmblaViewportRefType;
+  onThumbClick: (index: number) => void;
   carouselId: string;
 }
 
@@ -84,7 +77,7 @@ const Carousel: React.FC<CarouselProps> = ({
                                              isAutoPlay = false,
                                            }) => {
   const carouselId = useId();
-  const [slidesrArr, setSlidesArr] = useState<Element[]>([]);
+  const [slidesrArr, setSlidesArr] = useState<ThumbnailSlide[]>([]);
   const plugins = [];
 
   if (activeSlider) {
@@ -103,7 +96,6 @@ const Carousel: React.FC<CarouselProps> = ({
     );
   }
   const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
-  const [selectedThumbIndex, setSelectedThumbIndex] = useState(0);
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: 'keepSnaps',
     dragFree: true,
@@ -119,9 +111,8 @@ const Carousel: React.FC<CarouselProps> = ({
 
   const onSelect = useCallback(() => {
     if (!emblaApi || !emblaThumbsApi) return;
-    setSelectedThumbIndex(emblaApi.selectedScrollSnap()); // Use setSelectedThumbIndex here
     emblaThumbsApi.scrollTo(emblaApi.selectedScrollSnap());
-  }, [emblaApi, emblaThumbsApi, setSelectedThumbIndex]);
+  }, [emblaApi, emblaThumbsApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -130,15 +121,9 @@ const Carousel: React.FC<CarouselProps> = ({
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+  const { selectedIndex, scrollSnaps } =
     useDotButton(emblaApi);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
 
   const onScroll = useCallback((emblaApi: EmblaCarouselType) => {
     const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
@@ -242,14 +227,9 @@ const Carousel: React.FC<CarouselProps> = ({
   return (
     <CarouselContext.Provider
       value={{
-        prevBtnDisabled,
-        nextBtnDisabled,
-        onPrevButtonClick,
-        onNextButtonClick,
         selectedIndex,
         scrollSnaps,
         setSlidesArr,
-        onDotButtonClick,
         scrollProgress,
         selectedSnap,
         snapCount,
@@ -301,7 +281,9 @@ export const Slider: React.FC<SliderProps> = ({
   // console.log(thumnailSrc)
 
   const addImgToSlider = useCallback(() => {
-    setSlidesArr((prev: any) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    setSlidesArr((prev: ThumbnailSlide[]) => {
       // Prevent adding duplicate images
       return [...prev, thumnailSrc];
     });
@@ -320,138 +302,6 @@ export const Slider: React.FC<SliderProps> = ({
       ) : (
         <>{children}</>
       )}
-    </div>
-  );
-};
-
-export const SliderPrevButton = ({
-                                   children,
-                                   className,
-                                 }: {
-  children?: ReactNode;
-  className?: string;
-}) => {
-  const { onPrevButtonClick, prevBtnDisabled }: any = useCarouselContext();
-  return (
-    <button
-      className={cn('', className)}
-      type='button'
-      onClick={onPrevButtonClick}
-      disabled={prevBtnDisabled}
-    >
-      {children}
-    </button>
-  );
-};
-export const SliderNextButton = ({
-                                   children,
-                                   className,
-                                 }: {
-  children?: ReactNode;
-  className?: string;
-}) => {
-  const { onNextButtonClick, nextBtnDisabled }: any = useCarouselContext();
-  return (
-    <>
-      <button
-        className={cn('', className)}
-        type='button'
-        onClick={onNextButtonClick}
-        disabled={nextBtnDisabled}
-      >
-        {children}
-      </button>
-    </>
-  );
-};
-export const SliderProgress = ({ className }: { className?: string }) => {
-  const { scrollProgress }: any = useCarouselContext();
-  return (
-    <div
-      className={cn(
-        '  bg-gray-500 relative rounded-md h-2 justify-end items-center w-96 max-w-[90%] overflow-hidden',
-        className
-      )}
-    >
-      <div
-        className='dark:bg-white bg-black absolute w-full top-0 -left-[100%] bottom-0'
-        style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}
-      />
-    </div>
-  );
-};
-
-export const SliderSnapDisplay = ({ className }: { className?: string }) => {
-  const { selectedSnap, snapCount } = useCarouselContext();
-  const prevSnapRef = useRef(selectedSnap);
-  const [direction, setDirection] = useState<number>(0);
-
-  useEffect(() => {
-    setDirection(selectedSnap > prevSnapRef.current ? 1 : -1);
-    prevSnapRef.current = selectedSnap;
-  }, [selectedSnap]);
-
-  return (
-    <div
-      className={cn(
-        'mix-blend-difference overflow-hidden flex gap-1 items-center',
-        className
-      )}
-    >
-      <motion.div
-        key={selectedSnap}
-        custom={direction}
-        initial={(d: number) => ({ y: d * 20, opacity: 0 })}
-        animate={{ y: 0, opacity: 1 }}
-        exit={(d: number) => ({ y: d * -20, opacity: 0 })}
-      >
-        {selectedSnap + 1}
-      </motion.div>
-      <span>/ {snapCount}</span>
-    </div>
-  );
-};
-export const SliderDotButton = ({
-                                  className,
-                                  activeclass,
-                                }: {
-  className?: string;
-  activeclass?: string;
-}) => {
-  const { selectedIndex, scrollSnaps, onDotButtonClick, carouselId }: any =
-    useCarouselContext();
-  return (
-    <div className={cn('flex', className)}>
-      <div className='flex gap-2'>
-        {scrollSnaps.map((_: any, index: React.Key | null | undefined) => (
-          <button
-            type='button'
-            key={index}
-            onClick={() => onDotButtonClick(index)}
-            className={`relative inline-flex  p-0 m-0 w-10 h-2 `}
-          >
-            <div className=' bg-gray-500/40  h-2 rounded-full w-10 '></div>
-            {index === selectedIndex && (
-              <AnimatePresence mode='wait'>
-                <motion.div
-                  transition={{
-                    layout: {
-                      duration: 0.4,
-                      ease: 'easeInOut',
-                      delay: 0.04,
-                    },
-                  }}
-                  layoutId={`hover-${carouselId}`}
-                  className={cn(
-                    'absolute z-[3] w-full h-full left-0 top-0 dark:bg-white bg-black rounded-full',
-                    activeclass
-                  )}
-                />
-              </AnimatePresence>
-            )}
-          </button>
-        ))}
-      </div>
     </div>
   );
 };
@@ -492,49 +342,6 @@ export const useDotButton = (
     selectedIndex,
     scrollSnaps,
     onDotButtonClick,
-  };
-};
-type UsePrevNextButtonsType = {
-  prevBtnDisabled: boolean;
-  nextBtnDisabled: boolean;
-  onPrevButtonClick: () => void;
-  onNextButtonClick: () => void;
-};
-
-export const usePrevNextButtons = (
-  emblaApi: EmblaCarouselType | undefined
-): UsePrevNextButtonsType => {
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-
-  const onPrevButtonClick = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const onNextButtonClick = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onSelect);
-    emblaApi.on('select', onSelect);
-  }, [emblaApi, onSelect]);
-
-  return {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
   };
 };
 
@@ -589,6 +396,8 @@ export const ThumsSlider: React.FC = () => {
             onClick={() => onThumbClick(index)}
           >
             <motion.img
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-expect-error
               src={slide}
               className='w-full h-full object-cover rounded-sm'
               width={400}

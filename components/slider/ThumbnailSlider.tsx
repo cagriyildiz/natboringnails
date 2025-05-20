@@ -6,9 +6,10 @@ import Carousel, {
   ThumsSlider,
 } from './carousel';
 import Image from 'next/image';
+import {Img} from "@/components/treatments/data";
 
 interface ThumbnailSliderProps {
-  images: string[]
+  images: Img[]
 }
 
 function ThumbnailSlider({images}: ThumbnailSliderProps) {
@@ -22,11 +23,11 @@ function ThumbnailSlider({images}: ThumbnailSliderProps) {
               <Slider
                 key={index}
                 className='min-h-100 max-h-100 md:min-h-148 md:max-h-148 w-full'
-                thumnailSrc={i}
+                thumnailSrc={i.src}
               >
                 <Image
-                  src={i}
-                  alt={"i.title"}
+                  src={i.src}
+                  alt={i.alt}
                   width={900}
                   height={900}
                   className="rounded-3xl object-cover object-center min-h-100 max-h-100 md:min-h-148 md:max-h-148"
