@@ -35,9 +35,9 @@ function Hero() {
 
   return (
     <div className="bg-linear-to-b from-primary to-secondary flex-1">
-      <div className="max-w-7xl m-auto w-1/2 -lg h-full m-auto">
-        <motion.div className="flex flex-col justify-center gap-14 h-full text-center items-center" variants={textVariants} initial="initial" animate="animate">
-          <motion.h2 className="tracking-[10px] text-2xl md:text-3xl font-bold text-secondary" variants={textVariants}>Natboringnails</motion.h2>
+      <div className="max-w-7xl m-auto h-full m-auto">
+        <motion.div className="flex flex-col md:justify-center gap-14 h-full text-center items-center" variants={textVariants} initial="initial" animate="animate">
+          <motion.h2 className="tracking-[10px] text-2xl md:text-3xl font-bold text-secondary hidden md:block" variants={textVariants}>Natboringnails</motion.h2>
           <motion.h1 className="text-5xl md:text-8xl font-semibold" variants={textVariants}>Nail Art Studio</motion.h1>
           <motion.div className="flex flex-col md:flex-row gap-8 font-bold text-2xl" variants={textVariants}>
             <a href="https://natboringnails.salonized.com/widget_bookings/new">
