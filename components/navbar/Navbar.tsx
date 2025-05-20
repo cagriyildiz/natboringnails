@@ -20,7 +20,7 @@ function Navbar() {
     <div className="bg-primary py-2 px-8 text-3xl h-30">
       <div className="h-full max-w-7xl m-auto flex items-center justify-between">
         <motion.span
-          className="font-bold w-12 md:block"
+          className="font-bold w-18 md:w-fit md:block"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}>
@@ -31,7 +31,6 @@ function Navbar() {
               sizes="50vw"
               src="/logo-white.png"
               alt="natboringnails logo"
-              className="w-24"
             />
           </div>
         </motion.span>

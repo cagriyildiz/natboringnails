@@ -34,7 +34,7 @@ const handleOnClick = (e: React.FormEvent) => {
 function Hero() {
 
   return (
-    <div className="bg-linear-to-b from-primary to-secondary flex-1">
+    <div className="bg-linear-to-b from-primary to-secondary flex-1 pt-6 md:pt-0">
       <div className="max-w-7xl m-auto h-full m-auto">
         <motion.div className="flex flex-col md:justify-center gap-14 h-full text-center items-center" variants={textVariants} initial="initial" animate="animate">
           <motion.h2 className="tracking-[10px] text-2xl md:text-3xl font-bold text-secondary hidden md:block" variants={textVariants}>Natboringnails</motion.h2>
