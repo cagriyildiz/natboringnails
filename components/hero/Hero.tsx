@@ -36,17 +36,16 @@ function Hero() {
   return (
     <div className="bg-linear-to-b from-primary to-secondary flex-1 pt-6 md:pt-0">
       <div className="max-w-7xl m-auto h-full m-auto">
-        <motion.div className="flex flex-col md:justify-center gap-14 h-full text-center items-center" variants={textVariants} initial="initial" animate="animate">
-          <motion.h2 className="tracking-[10px] text-2xl md:text-3xl font-bold text-secondary hidden md:block" variants={textVariants}>Natboringnails</motion.h2>
-          <motion.h1 className="text-5xl md:text-8xl font-semibold" variants={textVariants}>Nail Art Studio</motion.h1>
-          <motion.div className="flex flex-col md:flex-row gap-8 font-bold text-2xl" variants={textVariants}>
+        <motion.div className="flex flex-col justify-center gap-14 h-full text-center items-center" variants={textVariants} initial="initial" animate="animate">
+          <motion.h1 className="text-4xl md:text-5xl font-semibold font-kindred" variants={textVariants}>Nail Art Studio</motion.h1>
+          <motion.div className="flex flex-col md:flex-row gap-8 text-md" variants={textVariants}>
             <a href="https://natboringnails.salonized.com/widget_bookings/new">
               <button className="p-6 border border-white rounded-xl bg-white text-black cursor-pointer">Book Now</button>
             </a>
             <a href="#contact"><button onClick={handleOnClick} className="p-6 border border-white rounded-xl bg-transparent text-white cursor-pointer">Contact Me</button></a>
           </motion.div>
           <a href="#inspiration">
-            <div className="mb-8 text-3xl text-primary font-bold!">Scroll down for inspiration</div>
+            <div className="mb-8 text-xl text-white font-bold">Scroll down for inspiration</div>
             <svg xmlns="http://www.w3.org/2000/svg" width={48} height={48} viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round"
                  className="icon icon-tabler icons-tabler-outline icon-tabler-circle-arrow-down m-auto animate-bounce">

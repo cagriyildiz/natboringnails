@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import localFont from 'next/font/local'
 import { Open_Sans, Amatic_SC } from "next/font/google";
 import "./globals.css";
 
+const tanKindred = localFont({
+  src: '../public/fonts/tankindred.ttf', // Crucial: path relative to layout.tsx
+  display: 'swap', // 'swap' is generally good for user experience
+  variable: '--font-tan-kindred', // Define a CSS variable for Tailwind
+});
+
 const openSans = Open_Sans({
-  variable: "--font-opens-sans",
+  variable: "--font-open-sans",
   subsets: ["latin"],
 });
 
@@ -25,9 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${openSans.variable} ${amaticSc.variable} ${tanKindred.variable}`}>
       <body
-        className={`${openSans.variable} ${amaticSc.variable} antialiased`}
+        className="antialiased"
       >
         {children}
       </body>
