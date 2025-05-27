@@ -55,6 +55,15 @@
     }
 }
 
+@keyframes slow-zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08); /* Final zoom level */
+    }
+}
+
 .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards; /* Applies the animation */
     opacity: 0; /* Ensures it starts invisible */
