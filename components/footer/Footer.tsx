@@ -1,14 +1,13 @@
-// components/Footer.tsx
 import Link from 'next/link';
-import Image from 'next/image'; // If you have a logo image
+import Image from 'next/image';
 import {
   FaFacebookF,
   FaInstagram,
   FaTiktok,
-  FaMapMarkerAlt, // For address
-  FaPhone, // For phone number
-  FaEnvelope, // For email
-} from 'react-icons/fa'; // Example: Using react-icons for social and contact icons. Install: npm install react-icons
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+} from 'react-icons/fa';
 
 import { footerNavLinks, socialLinks, contactInfo } from './data'; // Adjust path as needed
 
@@ -34,16 +33,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
 
-          {/* Section 1: Logo and Short Description */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            {/* Replace with your logo if you have one */}
             <Link href="/" className="mb-4">
               <Image
                 src="/logo-white.png"
                 alt="Natboringnails Logo"
                 width={150}
                 height={50}
-                className="filter invert" // Example: if your logo is dark, invert it for light background
+                className="filter invert"
               />
             </Link>
             <p className="text-sm max-w-xs mb-4">
@@ -65,7 +62,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Section 2: Quick Links */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -82,7 +78,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Section 3: Contact Information */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold text-white mb-4">Contact Me</h3>
             <div className="space-y-2">
@@ -106,10 +101,9 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar: Copyright */}
         <div className="border-t border-gray-700 pt-6 text-center text-sm">
           <p>&copy; {currentYear} Natboringnails. All rights reserved.</p>
-          <p>Made with ❤️ in Haarlem, NL</p> {/* A nice personal touch */}
+          <p>Made with ❤️ in Haarlem, NL</p>
         </div>
       </div>
     </footer>

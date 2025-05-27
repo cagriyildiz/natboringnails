@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HeroV2() {
   return (
-    <header className="min-h-screen flex flex-col relative bg-stone-50" role="banner">
+    <header className="min-h-screen flex flex-col relative bg-stone-50 mb-16" role="banner">
       <div className="absolute inset-0 z-0"
            aria-hidden="true">
         <Image

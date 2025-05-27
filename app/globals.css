@@ -29,6 +29,7 @@
     body {
         /* body styles, but avoid setting font-family here as html already does */
         color: white; /* This will apply to body text */
+        background: #fafaff;
     }
 
     /* If you still want paragraphs to specifically use Open Sans, ensure they don't override font-kindred */
