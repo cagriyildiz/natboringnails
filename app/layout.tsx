@@ -3,6 +3,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import localFont from 'next/font/local'
 import { Open_Sans, Amatic_SC } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer/Footer";
 
 const tanKindred = localFont({
   src: '../public/fonts/tankindred.ttf', // Crucial: path relative to layout.tsx
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <Footer />
       <GoogleAnalytics gaId="AW-17086843336" />
     </html>
   );
