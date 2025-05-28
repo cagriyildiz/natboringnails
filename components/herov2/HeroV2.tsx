@@ -32,19 +32,19 @@ export default function HeroV2() {
             </div>
             <ul className="flex space-x-6 md:space-x-8">
               <li><Link href="/services"
-                        className="text-white hover:text-pink-200 font-medium transition-colors duration-200">Services</Link>
+                        className="text-white font-medium transition-colors duration-200">Services</Link>
               </li>
               <li><Link href="/gallery"
-                        className="text-white hover:text-pink-200 font-medium transition-colors duration-200">Gallery</Link>
+                        className="text-white font-medium transition-colors duration-200">Gallery</Link>
               </li>
               <li><Link href="/pricing"
-                        className="text-white hover:text-pink-200 font-medium transition-colors duration-200">Pricing</Link>
+                        className="text-white font-medium transition-colors duration-200">Pricing</Link>
               </li>
               <li><Link href="/about"
-                        className="text-white hover:text-pink-200 font-medium transition-colors duration-200">About
+                        className="text-white font-medium transition-colors duration-200">About
                 Me</Link></li>
               <li><Link href="/contact"
-                        className="text-white hover:text-pink-200 font-medium transition-colors duration-200">Contact</Link>
+                        className="text-white font-medium transition-colors duration-200">Contact</Link>
               </li>
               <li>
                 <Link
