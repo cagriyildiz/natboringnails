@@ -26,19 +26,7 @@ export default function ServicesOverview() {
 
   return (
     <section id="services-overview" className="relative w-full overflow-hidden">
-      <Image
-        src="/background2.png"
-        alt="Section background"
-        layout="fill"
-        objectFit="fill"
-        quality={40}
-        priority
-        className="absolute inset-0 z-0"
-      />
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#FAFAFF] to-[#FAFAFF]/60"></div>
-
-      {/* Content Wrapper: This div ensures your content is above the background image */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 my-32 md:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 my-32 md:px-8 bg-gray-50 rounded-xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-kindred font-extrabold text-gray-900 mb-4">Your Nails, My Artistry</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -48,7 +36,7 @@ export default function ServicesOverview() {
         </div>
 
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {services.map((service, index) => (
               <div
                 key={index}

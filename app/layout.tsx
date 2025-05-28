@@ -4,6 +4,11 @@ import localFont from 'next/font/local'
 import { Open_Sans, Amatic_SC } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
+import Navigation from "@/components/navbar/Navigation";
+import HeroV2 from "@/components/herov2/HeroV2";
+import Image from "next/image";
+import React from "react";
+import Header from "@/components/header/Header";
 
 const tanKindred = localFont({
   src: '../public/fonts/tankindred.ttf', // Crucial: path relative to layout.tsx
@@ -34,13 +39,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${openSans.variable} ${amaticSc.variable} ${tanKindred.variable}`}>
-      <body
-        className="antialiased"
-      >
+      <body className="antialiased">
+        <Header />
         {children}
-        <Footer />
+        <Footer/>
       </body>
-      <GoogleAnalytics gaId="AW-17086843336" />
+      <GoogleAnalytics gaId="AW-17086843336"/>
     </html>
   );
 }
