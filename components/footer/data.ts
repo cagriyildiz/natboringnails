@@ -2,9 +2,10 @@ export const footerNavLinks = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Gallery', href: '/gallery' },
+  { name: 'Price List', href: '/prices' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Book Now', href: '/book', isButton: true }, // Example for a button link
+  { name: 'Book Now', href: '/book', isButton: true },
 ];
 
 export const socialLinks = [
