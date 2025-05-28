@@ -5,7 +5,7 @@ import { teamMembers } from './data';
 
 export default function MeetTheTeam() {
   return (
-    <section id="meet-the-team" className="py-16 px-6 md:px-8 bg-gray-50 max-w-7xl mx-auto my-32">
+    <section id="meet-the-team" className="py-16 px-6 md:px-8 bg-gray-50 rounded-xl max-w-7xl mx-auto my-32">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-kindred font-extrabold text-gray-900 mb-4">Meet the Team</h2>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -31,9 +31,9 @@ export default function MeetTheTeam() {
             </div>
             <h3 className="text-2xl font-kindred font-bold text-gray-900 mb-2">{member.name}</h3>
             <p className="text-primary font-semibold mb-4">{member.title}</p>
-            <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
+            <div className="text-gray-600 mb-6 leading-relaxed flex-grow">
               <ReactMarkdown>{member.bio}</ReactMarkdown>
-            </p>
+            </div>
           </div>
         ))}
       </div>

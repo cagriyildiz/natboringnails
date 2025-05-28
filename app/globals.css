@@ -27,9 +27,7 @@
     }
 
     body {
-        /* body styles, but avoid setting font-family here as html already does */
-        color: white; /* This will apply to body text */
-        background: #fafaff;
+        color: white;
     }
 
     /* If you still want paragraphs to specifically use Open Sans, ensure they don't override font-kindred */
@@ -92,5 +90,5 @@
 }
 
 .custom-shape-divider-bottom-1748187659 .shape-fill {
-    fill: #FFFFFF;
+    fill: #FAFAFF;
 }

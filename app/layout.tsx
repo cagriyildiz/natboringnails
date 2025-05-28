@@ -38,8 +38,8 @@ export default function RootLayout({
         className="antialiased"
       >
         {children}
+        <Footer />
       </body>
-      <Footer />
       <GoogleAnalytics gaId="AW-17086843336" />
     </html>
   );

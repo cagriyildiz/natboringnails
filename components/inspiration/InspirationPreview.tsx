@@ -52,7 +52,7 @@ export default function InspirationPreview() {
   };
 
   return (
-    <section id="gallery-hero" className="relative w-screen h-screen overflow-hidden my-32">
+    <section id="gallery-hero" className="relative w-screen h-screen overflow-hidden">
       <Swiper
         centeredSlides={true}
         autoplay={{
