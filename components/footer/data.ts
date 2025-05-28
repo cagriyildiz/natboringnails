@@ -20,7 +20,7 @@ export const contactInfo = {
   email: 'nathaljanebbeling@gmail.com',
   openingHours: [
     'Mon-Fri: 10:00 AM - 7:00 PM',
-    'Sat: 10:00 AM - 1:00 PM',
+    'Sat: 10:00 AM - 2:00 PM',
     'Sun: Closed'
   ]
 };
