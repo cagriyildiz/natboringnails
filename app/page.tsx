@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <ServicesOverview />
+        <ServicesOverview withHeader={true}/>
         <InspirationPreview />
         <MeetTheTeam />
         <Location />

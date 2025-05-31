@@ -2,7 +2,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React from "react";
 
-export default function ServicesOverview() {
+interface ServicesOverviewProps {
+  withHeader?: boolean
+  className?: string | undefined;
+}
+
+export default function ServicesOverview({withHeader, className}: ServicesOverviewProps) {
   const services = [
     {
       title: 'BIAB & Nail Health',
@@ -25,48 +30,52 @@ export default function ServicesOverview() {
   ];
 
   return (
-    <section id="services-overview" className="relative w-full overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 my-32 md:px-8 bg-gray-50 rounded-xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-kindred font-extrabold text-gray-900 mb-4">Your Nails, My Artistry</h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            From strengthening BIAB foundations to breathtaking custom designs, each service is meticulously crafted to
-            bring your unique vision to life.
-          </p>
-        </div>
+    <section id="services-overview" className={`${className ? className : 'relative w-full overflow-hidden'}`}>
+      <div className={`relative mx-auto${withHeader ? " z-10 max-w-7xl px-6 py-16 my-32 md:px-8 bg-gray-50 rounded-xl" : ""}`}>
+        {withHeader && (
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-kindred font-extrabold text-gray-900 mb-4">Your Nails, My Artistry</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              From strengthening BIAB foundations to breathtaking custom designs, each service is meticulously crafted to
+              bring your unique vision to life.
+            </p>
+          </div>
+        )}
 
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col overflow-hidden group bg-white p-4 rounded-lg shadow-md"
-              >
-                <div className="relative h-96 w-full overflow-hidden rounded-lg cursor-pointer">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-700 rounded-lg shadow-xl overflow-hidden
+                           flex flex-col transform transition-transform duration-300 hover:scale-[1.02]"
+            >
+              {service.backgroundImage && (
+                <div className="relative w-full h-80">
                   <Image
                     src={service.backgroundImage}
-                    alt={service.title + " example"}
+                    alt={service.title}
                     layout="fill"
                     objectFit="cover"
-                    className="transition-transform duration-300 group-hover:scale-105"
+                    className="group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-
-                <div className="flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 pt-6">{service.title}</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
-                  <Link href={service.link}
-                        className="inline-flex items-center text-secondary font-semibold hover:text-[#4a9658] transition-colors duration-200 pb-6 mt-auto">
-                    Learn More
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </Link>
-                </div>
+              )}
+              <div className="p-6 flex flex-col flex-grow">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                  {service.title}
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed flex-grow mb-6">
+                  {service.description}
+                </p>
+                <Link href={`/services/${index}`}
+                      className="mt-auto px-6 py-3 bg-[var(--color-primary)] text-white font-semibold rounded-full shadow-md
+                                   hover:bg-[var(--color-primary-dark)] transition-colors duration-300
+                                   inline-block self-start text-center">
+                  Learn More
+                </Link>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

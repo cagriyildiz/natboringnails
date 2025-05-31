@@ -12,8 +12,10 @@
 
     --color-primary: #6326BA;
     --color-primary-light: #C4B0F6;
+    --color-primary-dark: #521C9A;
     --color-secondary: #58B36B;
     --color-background: #F2F0EB;
+    --color-secondary-dark: #499558;
 }
 
 @layer base {
@@ -91,4 +93,52 @@
 
 .custom-shape-divider-bottom-1748187659 .shape-fill {
     fill: #FAFAFF;
+}
+
+@keyframes heroZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); } /* Slightly zoom in */
+    100% { transform: scale(1); }
+}
+
+.animate-hero-zoom {
+    animation: heroZoom 40s ease-in-out infinite; /* Very slow, continuous zoom */
+}
+
+/* Optional: Existing animations you might have from previous steps */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes bounceOnce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-8px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-4px);
+    }
+}
+
+.animate-bounce-once {
+    animation: bounceOnce 1.2s ease-out 0.8s 1; /* Play once with a delay */
 }
