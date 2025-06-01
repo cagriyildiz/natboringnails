@@ -25,13 +25,13 @@ export default function Navigation({ref}: NavigationProps) {
           <li><Link href="/services"
                     className="text-white font-medium transition-colors duration-200">Services</Link>
           </li>
-          <li><Link href="/gallery"
-                    className="text-white font-medium transition-colors duration-200">Gallery</Link>
+          <li><Link href="/inspiration"
+                    className="text-white font-medium transition-colors duration-200">Inspiration</Link>
           </li>
-          <li><Link href="/pricing"
+          <li><Link href="/price-list.pdf"
                     className="text-white font-medium transition-colors duration-200">Pricing</Link>
           </li>
-          <li><Link href="/about"
+          <li><Link href="/#meet-the-team"
                     className="text-white font-medium transition-colors duration-200">About
             Me</Link></li>
           <li><Link href="/contact"
