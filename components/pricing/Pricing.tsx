@@ -12,6 +12,7 @@ interface PricingSectionProps {
   subtitle?: string;
   priceItems: PriceItem[];
   disclaimerText?: string;
+  className?: string;
 }
 
 const Pricing: React.FC<PricingSectionProps> = (
@@ -20,9 +21,10 @@ const Pricing: React.FC<PricingSectionProps> = (
     subtitle,
     priceItems,
     disclaimerText,
+    className
   }) => {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className={`${className} py-16 bg-gray-50 dark:bg-gray-900`}>
       <div className="max-w-7xl mx-auto px-6 py-8">
         <h2 className="text-3xl font-kindred font-bold text-gray-900 dark:text-white mb-8 text-center">
           {title}

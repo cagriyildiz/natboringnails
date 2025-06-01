@@ -1,4 +1,3 @@
-// app/services/nail-art/page.tsx
 import React from 'react';
 import Banner from "@/components/banner/Banner";
 import ReactMarkdown from "react-markdown";
@@ -77,6 +76,7 @@ const NailArtServicePage: React.FC = () => {
           title="Pricing (Add-on)"
           subtitle="Elevate your base manicure with a personalized touch. Nail art is an add-on service, and the prices below are *in addition* to your base BIAB or gel polish treatment."
           priceItems={nailArtLevels}
+          className="bg-white"
         />
 
       </main>

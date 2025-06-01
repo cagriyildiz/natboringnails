@@ -79,6 +79,7 @@ const GelPolishServicePage: React.FC = () => {
           title="Pricing"
           subtitle={pricingIntro}
           priceItems={gelPolishTypes}
+          className="bg-white"
         />
       </main>
     </div>
