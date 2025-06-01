@@ -67,7 +67,7 @@ export default function ServicesOverview({withHeader, className}: ServicesOvervi
                 <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed flex-grow mb-6">
                   {service.description}
                 </p>
-                <Link href={`/services/${index}`}
+                <Link href={service.link}
                       className="mt-auto px-6 py-3 bg-[var(--color-primary)] text-white font-semibold rounded-full shadow-md
                                    hover:bg-[var(--color-primary-dark)] transition-colors duration-300
                                    inline-block self-start text-center">
