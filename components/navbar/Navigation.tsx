@@ -16,7 +16,7 @@ export default function Navigation() {
   const navLinks = [
     { name: 'Services', href: '/services' },
     { name: 'Inspiration', href: '/inspiration' },
-    { name: 'Pricing', href: '/price-list.pdf' },
+    { name: 'Pricing', href: '/price-list.pdf', external: true },
     { name: 'About Me', href: '/#meet-the-team' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -43,6 +43,8 @@ export default function Navigation() {
             <li key={link.name}>
               <Link
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className={`transition-colors duration-200
                   ${pathname === link.href ? 'font-bold text-primary' : 'text-white font-medium'}`}
               >
@@ -99,6 +101,8 @@ export default function Navigation() {
                 <Link
                   href={link.href}
                   onClick={toggleMobileMenu}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className={`text-gray-800 dark:text-gray-100 text-xl hover:text-primary dark:hover:text-primary-light transition-colors duration-200
                     ${pathname === link.href ? 'font-bold text-primary dark:text-primary-light' : ''}`}
                 >
