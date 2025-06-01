@@ -28,9 +28,9 @@ const Pricing: React.FC<PricingSectionProps> = (
           {title}
         </h2>
         {subtitle && (
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto text-center mb-10">
-            {subtitle}
-          </p>
+          <div className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto text-center mb-10">
+            <ReactMarkdown>{subtitle}</ReactMarkdown>
+          </div>
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {priceItems.map((item, index) => (
