@@ -1,16 +1,31 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
-interface NavigationProps {
-  ref?: React.RefObject<null>
-}
+export default function Navigation() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-export default function Navigation({ref}: NavigationProps) {
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const navLinks = [
+    { name: 'Services', href: '/services' },
+    { name: 'Inspiration', href: '/inspiration' },
+    { name: 'Pricing', href: '/price-list.pdf' },
+    { name: 'About Me', href: '/#meet-the-team' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
   return (
-    <nav className="w-full py-4 top-0 border-b border-[#c4b0f6] border-opacity-50 z-1 shrink-0" ref={ref} aria-label="Primary Navigation">
+    <nav className="w-full py-4 border-b border-[#c4b0f6] border-opacity-50 z-50 shrink-0" aria-label="Primary Navigation">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div className="text-2xl font-bold text-white">
+        {/* Logo */}
+        <div className="flex-shrink-0">
           <Link href="/" className="transition-opacity duration-200" aria-label="Natboringnails Home">
             <Image
               src="/logo-white.png"
@@ -21,23 +36,78 @@ export default function Navigation({ref}: NavigationProps) {
             />
           </Link>
         </div>
-        <ul className="flex space-x-6 md:space-x-8">
-          <li><Link href="/services"
-                    className="text-white font-medium transition-colors duration-200">Services</Link>
-          </li>
-          <li><Link href="/inspiration"
-                    className="text-white font-medium transition-colors duration-200">Inspiration</Link>
-          </li>
-          <li><Link href="/price-list.pdf"
-                    className="text-white font-medium transition-colors duration-200">Pricing</Link>
-          </li>
-          <li><Link href="/#meet-the-team"
-                    className="text-white font-medium transition-colors duration-200">About
-            Me</Link></li>
-          <li><Link href="/contact"
-                    className="text-white font-medium transition-colors duration-200">Contact</Link>
-          </li>
+
+        {/* Desktop Navigation Links */}
+        <ul className="hidden md:flex space-x-6 md:space-x-8 items-center">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <Link
+                href={link.href}
+                className={`transition-colors duration-200
+                  ${pathname === link.href ? 'font-bold text-primary' : 'text-white font-medium'}`}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
+
+        {/* Mobile Menu Button (Hamburger Icon) */}
+        <button
+          onClick={toggleMobileMenu}
+          className="md:hidden text-white focus:outline-none"
+          aria-label="Toggle navigation menu"
+        >
+          {isMobileMenuOpen ? (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          ) : (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300
+          ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        onClick={toggleMobileMenu}
+      >
+        {/* Mobile Menu Drawer */}
+        <div
+          className={`fixed top-0 right-0 w-64 h-full bg-secondary dark:bg-gray-700 z-50 shadow-lg p-6
+            transform transition-transform ease-in-out duration-300
+            ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={toggleMobileMenu}
+            className="absolute top-4 right-4 text-gray-800 dark:text-white focus:outline-none"
+            aria-label="Close navigation menu"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+          <ul className="flex flex-col space-y-6 mt-12">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  onClick={toggleMobileMenu}
+                  className={`text-gray-800 dark:text-gray-100 text-xl hover:text-primary dark:hover:text-primary-light transition-colors duration-200
+                    ${pathname === link.href ? 'font-bold text-primary dark:text-primary-light' : ''}`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
