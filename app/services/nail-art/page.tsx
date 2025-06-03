@@ -59,7 +59,7 @@ const NailArtServicePage: React.FC = () => {
               <div className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800 text-left">
                 <h3 className="text-xl font-semibold text-primary-brand dark:text-primary-light-brand mb-3">1. Consultation & Inspiration</h3>
                 <ReactMarkdown>
-                  Every nail art design begins with a personalized consultation. We&apos;ll discuss your vision, inspiration photos, and the perfect level of detail to complement your base manicure. Whether you have a specific idea in mind or need creative guidance, I'm here to bring your nail art dreams to life.
+                  Every nail art design begins with a personalized consultation. We&apos;ll discuss your vision, inspiration photos, and the perfect level of detail to complement your base manicure. Whether you have a specific idea in mind or need creative guidance, I&apos;m here to bring your nail art dreams to life.
                 </ReactMarkdown>
               </div>
               <div className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800 text-left">
