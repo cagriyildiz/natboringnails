@@ -1,11 +1,11 @@
 export const footerNavLinks = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'Gallery', href: '/gallery' },
-  { name: 'Price List', href: '/prices' },
-  { name: 'About', href: '/about' },
+  { name: 'Inspiration', href: '/inspiration' },
+  { name: 'Price List', href: '/price-list.pdf', external: true },
+  { name: 'About', href: '/#meet-the-team' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Book Now', href: '/book', isButton: true },
+  { name: 'Book Now', href: '/booking', isButton: true },
 ];
 
 export const socialLinks = [
