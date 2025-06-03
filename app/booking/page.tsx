@@ -47,7 +47,7 @@ export default function BookingPage() {
           </p>
           <Link
             href="/inspiration"
-            className="px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark transition duration-300 inline-block"
+            className="px-8 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark transition duration-300 inline-block"
             aria-label="Visit inspiration gallery"
           >
             Explore Designs

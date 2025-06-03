@@ -117,7 +117,7 @@ const ContactForm = () => {
           <div>
             <button
               type="submit"
-              className="w-full inline-flex justify-center py-4 px-6 border border-transparent rounded-md shadow-sm
+              className="w-full inline-flex justify-center py-4 px-6 border border-transparent rounded-full shadow-sm
                              text-lg font-semibold text-white bg-[var(--color-secondary)] cursor-pointer
                              hover:bg-[var(--color-secondary-dark)] focus:outline-none focus:ring-2 focus:ring-offset-2
                              focus:ring-[var(--color-secondary)] transition-colors duration-300"
