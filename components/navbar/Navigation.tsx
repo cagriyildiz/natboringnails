@@ -19,6 +19,7 @@ export default function Navigation() {
     { name: 'Pricing', href: '/price-list.pdf', external: true },
     { name: 'About Me', href: '/about' },
     { name: 'Contact', href: '/contact' },
+    // Removed 'Book Now' from here as it will be a dedicated button in mobile only
   ];
 
   return (
@@ -38,6 +39,7 @@ export default function Navigation() {
         </div>
 
         {/* Desktop Navigation Links */}
+        {/* The desktop nav doesn't have a "Book Now" button by default here */}
         <ul className="hidden md:flex space-x-6 md:space-x-8 items-center">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -52,7 +54,18 @@ export default function Navigation() {
               </Link>
             </li>
           ))}
+          {/* If you want a desktop 'Book Now' button outside the mobile menu, you'd add it here */}
+          {/* For example: */}
+          {/* <li>
+            <Link
+              href="/booking"
+              className="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition duration-300"
+            >
+              Book Now
+            </Link>
+          </li> */}
         </ul>
+
 
         {/* Mobile Menu Button (Hamburger Icon) */}
         <button
@@ -110,6 +123,18 @@ export default function Navigation() {
                 </Link>
               </li>
             ))}
+            {/* Mobile-only "Book Now" Button */}
+            <li className="">
+              <Link
+                href="/booking"
+                onClick={toggleMobileMenu} // Close menu when clicked
+                className={`text-gray-800 dark:text-gray-100 text-xl hover:text-primary dark:hover:text-primary-light transition-colors duration-200
+                    ${pathname === "/booking" ? 'font-bold text-primary dark:text-primary-light' : ''}`}
+                aria-label="Book your appointment"
+              >
+                Book Now
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
