@@ -17,7 +17,7 @@ export default function Navigation() {
     { name: 'Services', href: '/services' },
     { name: 'Inspiration', href: '/inspiration' },
     { name: 'Pricing', href: '/price-list.pdf', external: true },
-    { name: 'About Me', href: '/#meet-the-team' },
+    { name: 'About Me', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 

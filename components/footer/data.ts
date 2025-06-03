@@ -3,7 +3,7 @@ export const footerNavLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Inspiration', href: '/inspiration' },
   { name: 'Price List', href: '/price-list.pdf', external: true },
-  { name: 'About', href: '/#meet-the-team' },
+  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
   { name: 'Book Now', href: '/booking', isButton: true },
 ];
