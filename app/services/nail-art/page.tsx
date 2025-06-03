@@ -2,6 +2,18 @@ import React from 'react';
 import Banner from "@/components/banner/Banner";
 import ReactMarkdown from "react-markdown";
 import Pricing from "@/components/pricing/Pricing";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'Custom Nail Art Services in Haarlem',
+  description: 'Express your unique style with bespoke nail art services in Haarlem. From minimalist chic to intricate designs, personalize your manicure.',
+  openGraph: {
+    title: 'Nail Art Haarlem | Bespoke Nail Designs',
+    description: 'Get unique and creative nail art at Natboringnails in Haarlem. Explore levels from simple accents to complex hand-painted masterpieces.',
+    images: ['https://www.natboringnails.nl/treatments/level3/level3.2.jpeg'],
+  },
+  keywords: ['nail art Haarlem', 'custom nails Haarlem', 'hand-painted nails', 'nail design Haarlem', 'nail art levels'],
+};
 
 const NailArtServicePage: React.FC = () => {
   const nailArtLevels = [

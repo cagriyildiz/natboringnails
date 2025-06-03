@@ -3,6 +3,18 @@ import ServicesOverview from "@/components/services/ServicesOverview";
 import ReadyToBook from "@/components/book/ReadyToBook";
 import MyPromises from "@/components/promise/MyPromises";
 import Banner from "@/components/banner/Banner";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'Nail Services in Haarlem',
+  description: 'Explore my full range of professional nail services in Haarlem, including BIAB for strength, vibrant Gel Polish manicures, and bespoke Nail Art designs. Find your perfect nail treatment.',
+  openGraph: {
+    title: 'All Nail Services | Natboringnails Haarlem',
+    description: 'Discover comprehensive nail services offered by Natboringnails: BIAB, gel polish, and custom nail art, all designed for healthy, beautiful nails.',
+    images: ['https://www.natboringnails.nl/treatments/level4/level4.2.jpeg'],
+  },
+  keywords: ['nail services Haarlem', 'manicure types Haarlem', 'BIAB', 'gel polish', 'nail art', 'nail salon services'],
+};
 
 export default function ServicesPage() {
   return (

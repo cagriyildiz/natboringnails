@@ -25,8 +25,39 @@ const amaticSc = Amatic_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Natboringnails - Nagelstudio Haarlem",
+  title: {
+    default: 'Natboringnails | Professional Nail Art Studio in Haarlem',
+    template: '%s | Natboringnails',
+  },
   description: "Discover high-quality nail art, strengthening BIAB nails, and professional manicures in Haarlem. Enjoy a detail-oriented experience and leave with beautiful nails. Book online today!",
+  openGraph: {
+    title: 'Natboringnails | Professional Nail Art Studio in Haarlem',
+    description: 'Discover high-quality nail art, strengthening BIAB nails, and professional manicures in Haarlem. Enjoy a detail-oriented experience and leave with beautiful nails. Book online today!',
+    url: 'https://www.natboringnails.nl',
+    siteName: 'Natboringnails',
+    images: [
+      {
+        url: 'https://www.natboringnails.nl/social-share-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Natboringnails - Professional Nail Salon in Haarlem',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Natboringnails | Professional Nail Art Studio in Haarlem',
+    description: 'Discover high-quality nail art, strengthening BIAB nails, and professional manicures in Haarlem. Enjoy a detail-oriented experience and leave with beautiful nails. Book online today!',
+    images: ['https://www.natboringnails.nl/social-share-image.jpg'],
+  },
+  // Other general metadata
+  metadataBase: new URL('https://www.natboringnails.nl'),
+  keywords: ['nails Haarlem', 'nail salon Haarlem', 'BIAB Haarlem', 'gel polish Haarlem', 'nail art Haarlem', 'manicure Haarlem'],
+  authors: [{ name: 'Natboringnails' }],
+  creator: 'Natboringnails',
+  publisher: 'Natboringnails',
 };
 
 export default function RootLayout({

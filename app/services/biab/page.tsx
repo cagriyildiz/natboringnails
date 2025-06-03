@@ -3,6 +3,18 @@ import Banner from "@/components/banner/Banner";
 import Image from 'next/image';
 import ReactMarkdown, {Components} from "react-markdown";
 import Pricing from "@/components/pricing/Pricing";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'BIAB Manicure in Haarlem',
+  description: 'Strengthen and enhance your natural nails with professional BIAB manicure services in Haarlem. Durable, beautiful, and promotes healthy growth.',
+  openGraph: {
+    title: 'BIAB Nails Haarlem | Builder in a Bottle Service',
+    description: 'Discover the benefits of BIAB for strong, flexible, and healthy nails in Haarlem. Expert application by Natboringnails.',
+    images: ['https://www.natboringnails.nl/treatments/biab2/biab2.3.jpeg'],
+  },
+  keywords: ['BIAB Haarlem', 'Builder in a Bottle Haarlem', 'strong nails Haarlem', 'natural nail enhancement', 'BIAB treatment'],
+};
 
 const BiabServicePage: React.FC = () => {
   const biabPrices = [

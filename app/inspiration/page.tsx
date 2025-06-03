@@ -2,6 +2,18 @@ import React from 'react';
 import CategorySection from "@/components/inspiration/CategorySection";
 import Banner from "@/components/banner/Banner";
 import {categories} from "./data";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'Nail Art Inspiration Gallery',
+  description: 'Explore my extensive gallery of nail art designs, from elegant and subtle to bold and intricate. Find your perfect inspiration for your next manicure in Haarlem.',
+  openGraph: {
+    title: 'Nail Art Gallery & Ideas | Natboringnails Haarlem',
+    description: 'Browse stunning nail art photos and design ideas by Natboringnails. Get inspired for your BIAB, gel polish, or custom nail art appointment.',
+    images: ['https://www.natboringnails.nl/treatments/level2/level2.3.jpeg'],
+  },
+  keywords: ['nail art gallery', 'nail design ideas', 'manicure inspiration', 'Haarlem nail art', 'nail photo gallery', 'latest nail trends'],
+};
 
 const InspirationPage: React.FC = () => {
   return (

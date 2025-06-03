@@ -2,6 +2,18 @@ import React from 'react';
 import Location from "@/components/location/Location";
 import ContactForm from "@/components/contact/ContactForm";
 import Banner from "@/components/banner/Banner";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'Contact Natboringnails | Nail Salon in Haarlem',
+  description: 'Get in touch with Natboringnails for appointments, questions about BIAB, gel polish, or nail art. Find my studio location in Haarlem, North Holland.',
+  openGraph: {
+    title: 'Contact Me - Natboringnails Haarlem',
+    description: 'Reach out to Natboringnails for all your nail service inquiries and booking needs in Haarlem. I look forward to hearing from you!',
+    images: ['https://www.natboringnails.nl/treatments/level3/level3.1.jpeg'],
+  },
+  keywords: ['contact nail salon Haarlem', 'Natboringnails contact', 'Haarlem nail studio address', 'book nail appointment Haarlem', 'nail questions Haarlem'],
+};
 
 export default function ContactPage() {
   return (

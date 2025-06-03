@@ -1,6 +1,18 @@
 import React from 'react';
 import Banner from "@/components/banner/Banner";
 import Link from "next/link";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'Book Your Nail Appointment in Haarlem',
+  description: 'Easily schedule your next nail appointment at Natboringnails in Haarlem through my secure online booking system powered by Salonized.',
+  openGraph: {
+    title: 'Book Nail Appointment Haarlem | Natboringnails Salonized',
+    description: 'Book your BIAB, gel polish, or nail art appointment online with Natboringnails, your trusted nail salon in Haarlem.',
+    images: ['https://www.natboringnails.nl/treatments/level4/level4.1.jpeg'],
+  },
+  keywords: ['book nail appointment Haarlem', 'nail salon booking', 'online booking nails', 'Salonized booking'],
+};
 
 export default function BookingPage() {
   const salonizedEmbedUrl = "https://natboringnails.salonized.com/widget_bookings/new";

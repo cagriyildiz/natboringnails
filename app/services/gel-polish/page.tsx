@@ -2,6 +2,18 @@ import React from 'react';
 import Banner from "@/components/banner/Banner";
 import ReactMarkdown from "react-markdown";
 import Pricing from "@/components/pricing/Pricing";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'Gel Polish Manicure Haarlem',
+  description: 'Achieve vibrant, chip-free nails with professional gel polish manicures in Haarlem. Long-lasting shine and flawless finish for weeks.',
+  openGraph: {
+    title: 'Gel Polish Nails Haarlem | Long-Lasting Manicures',
+    description: 'Experience durable gel polish manicures at Natboringnails. Classic manicure and gel polish options for perfect, shining nails.',
+    images: ['https://www.natboringnails.nl/treatments/biab2/biab2.2.jpeg'],
+  },
+  keywords: ['gel polish Haarlem', 'manicure Haarlem', 'long-lasting gel nails', 'chip-free polish', 'classic manicure'],
+};
 
 const GelPolishServicePage: React.FC = () => {
   const gelPolishTypes = [
