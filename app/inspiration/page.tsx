@@ -3,6 +3,7 @@ import CategorySection from "@/components/inspiration/CategorySection";
 import Banner from "@/components/banner/Banner";
 import {categories} from "./data";
 import {Metadata} from "next";
+import ReadyToBook from "@/components/book/ReadyToBook";
 
 export const metadata: Metadata = {
   title: 'Nail Art Inspiration Gallery',
@@ -34,6 +35,11 @@ const InspirationPage: React.FC = () => {
           />
         ))}
       </main>
+
+      <ReadyToBook
+        title="Inspired? Let's Make It Real!"
+        subtitle="Your perfect nail design awaits. Click below to schedule your appointment and transform your inspiration into a stunning reality."
+      />
     </div>
   );
 };
