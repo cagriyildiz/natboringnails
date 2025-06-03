@@ -4,9 +4,6 @@ import localFont from 'next/font/local'
 import { Open_Sans, Amatic_SC } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
-import Navigation from "@/components/navbar/Navigation";
-import HeroV2 from "@/components/herov2/HeroV2";
-import Image from "next/image";
 import React from "react";
 import Header from "@/components/header/Header";
 
