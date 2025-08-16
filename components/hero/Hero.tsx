@@ -39,7 +39,7 @@ function Hero() {
         <motion.div className="flex flex-col justify-center gap-14 h-full text-center items-center" variants={textVariants} initial="initial" animate="animate">
           <motion.h1 className="text-4xl md:text-5xl font-semibold font-kindred" variants={textVariants}>Nail Art Studio</motion.h1>
           <motion.div className="flex flex-col md:flex-row gap-8 text-md" variants={textVariants}>
-            <a href="https://natboringnails.salonized.com/widget_bookings/new">
+            <a href="https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600">
               <button className="p-6 border border-white rounded-xl bg-white text-black cursor-pointer">Book Now</button>
             </a>
             <a href="#contact"><button onClick={handleOnClick} className="p-6 border border-white rounded-xl bg-transparent text-white cursor-pointer">Contact Me</button></a>

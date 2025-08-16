@@ -5,17 +5,17 @@ import {Metadata} from "next";
 
 export const metadata: Metadata = {
   title: 'Book Your Nail Appointment in Haarlem',
-  description: 'Easily schedule your next nail appointment at Natboringnails in Haarlem through my secure online booking system powered by Salonized.',
+  description: 'Easily schedule your next nail appointment at Natboringnails in Haarlem through my secure online booking system powered by Fresha.',
   openGraph: {
-    title: 'Book Nail Appointment Haarlem | Natboringnails Salonized',
+    title: 'Book Nail Appointment Haarlem | Natboringnails Fresha',
     description: 'Book your BIAB, gel polish, or nail art appointment online with Natboringnails, your trusted nail salon in Haarlem.',
     images: ['https://www.natboringnails.nl/treatments/level4/level4.1.jpeg'],
   },
-  keywords: ['book nail appointment Haarlem', 'nail salon booking', 'online booking nails', 'Salonized booking'],
+  keywords: ['book nail appointment Haarlem', 'nail salon booking', 'online booking nails', 'Fresha booking'],
 };
 
 export default function BookingPage() {
-  const salonizedEmbedUrl = "https://natboringnails.salonized.com/widget_bookings/new";
+  const embedUrl = "https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600";
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white flex flex-col">
@@ -32,15 +32,15 @@ export default function BookingPage() {
             Secure Your Spot
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Easily book your next nail appointment through my secure online booking system powered by Salonized. Choose
+            Easily book your next nail appointment through my secure online booking system powered by Fresha. Choose
             your desired service, date, and time.
           </p>
 
           <div className="relative w-full overflow-hidden rounded-lg shadow-xl aspect-video md:aspect-[3/1]"
                style={{height: '700px'}}>
             <iframe
-              src={salonizedEmbedUrl}
-              title="Salonized Online Booking Form"
+              src={embedUrl}
+              title="Fresha Online Booking Form"
               className="absolute top-0 left-0 w-full h-full border-0"
               allowFullScreen
               loading="lazy"
