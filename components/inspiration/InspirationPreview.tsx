@@ -104,30 +104,6 @@ export default function InspirationPreview() {
       </div>
 
       <style jsx global>{`
-          .swiper-pagination-bullet {
-              background-color: rgba(255, 255, 255, 0.5) !important;
-              opacity: 1 !important;
-              width: 10px;
-              height: 10px;
-          }
-          .swiper-pagination-bullet-active {
-              background-color: #ffffff !important;
-          }
-          .swiper-pagination {
-              background-color: #C8C8C840 !important;
-              backdrop-filter: blur(16px);
-              width: fit-content !important;
-              padding: 16px !important;
-              margin: auto !important;
-              position: sticky;
-              border-radius: 999px;
-          }
-
-          .image-zoom-wrapper {
-              transition: transform 0s ease-out;
-              will-change: transform;
-          }
-
           .image-zoom-wrapper img {
               transform: none;
               transition: none;
