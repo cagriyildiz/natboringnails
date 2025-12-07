@@ -12,8 +12,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, cards }) =>
   return (
     <section
       id={id}
-      className="min-h-screen flex flex-col py-16
-                 bg-gray-100 dark:bg-gray-800"
+      className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:px-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg border-t-2 border-gray-100 mt-[-40px] lg:mt-[-80px] mb-20 md:mb-30 last-of-type:mb-0"
     >
       <div className="w-full max-w-full px-6 py-8">
         <h2 className="text-4xl font-kindred font-bold text-gray-900 dark:text-white mb-8 text-center">

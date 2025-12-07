@@ -25,7 +25,7 @@ const InspirationPage: React.FC = () => {
         subtitle="Ready to *polish off* your look? As you scroll down, you'll embark on a journey from **simple chic** to **seriously stunning** nail art. Discover designs that are *just the tip* of the iceberg, all the way to **masterpieces that truly nail it!** Get ready to find your next obsession."
       />
 
-      <main className="w-full">
+      <main>
         {categories.map((category) => (
           <CategorySection
             key={category.id}
