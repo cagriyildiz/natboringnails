@@ -23,8 +23,8 @@ export default function MeetTheTeam() {
               <Image
                 src={member.image}
                 alt={member.name}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 objectPosition="top"
                 priority={index === 0}
               />

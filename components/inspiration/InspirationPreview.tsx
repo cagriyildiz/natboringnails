@@ -85,8 +85,8 @@ export default function InspirationPreview() {
               <Image
                 src={image.src}
                 alt={image.alt}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </SwiperSlide>

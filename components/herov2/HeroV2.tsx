@@ -32,8 +32,8 @@ export default function HeroV2() {
             <Image
               src="/treatments/level4/level4.6.png"
               alt="Close-up of elegant nail art design"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
               className="transition-transform duration-300 hover:scale-105"
             />
           </div>

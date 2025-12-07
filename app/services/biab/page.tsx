@@ -134,8 +134,8 @@ const BiabServicePage: React.FC = () => {
                   <Image
                     src={product.imageSrc}
                     alt={product.imageAlt}
-                    fill={true}
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: 'cover' }}
                     className="object-cover"
                     priority
                   />

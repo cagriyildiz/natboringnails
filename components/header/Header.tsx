@@ -17,8 +17,8 @@ const Header = () => {
         <Image
           src="/background.png"
           alt="Abstract background image of nail art with soft colors"
-          layout="fill"
-          objectFit="fill"
+          fill
+          style={{ objectFit: 'cover' }}
           className="mix-blend-multiply"
         />
       </div>

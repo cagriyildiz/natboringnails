@@ -54,8 +54,8 @@ export default function ServicesOverview({withHeader, className}: ServicesOvervi
                   <Image
                     src={service.backgroundImage}
                     alt={service.title}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: 'cover' }}
                     className="group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
