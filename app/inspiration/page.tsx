@@ -31,6 +31,7 @@ const InspirationPage: React.FC = () => {
             key={category.id}
             id={category.id}
             name={category.name}
+            description={category.description}
             cards={category.cards}
           />
         ))}

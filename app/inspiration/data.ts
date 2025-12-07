@@ -7,6 +7,7 @@ export interface CardData {
 interface CategoryData {
   id: string;
   name: string;
+  description: string;
   cards: CardData[];
 }
 
@@ -14,6 +15,7 @@ export const categories: CategoryData[] = [
   {
     id: 'level1',
     name: 'Almost Boring',
+    description: '**Design Level 1:** This tier is ideal for clients who want a touch of visual interest without going over the top. It includes simple yet stylish techniques like multi-color designs across all nails, chic dot placement, the shimmer of metallic foils, a trendy glazed donut finish, or elegant, minimalist lines. It\'s the go-to for adding quick personality to your manicure.',
     cards: [
       {
         frontImage: '/treatments/level1/level1.1.jpeg',
@@ -50,6 +52,7 @@ export const categories: CategoryData[] = [
   {
     id: 'level2',
     name: 'Nat So Boring',
+    description: '**Design Level 2:** This category is reserved for timeless, highly sought-after designs that require precision and steady hands. Services include the flawlessly executed French tips (whether classic white or colored), a mirror-like chrome powder finish for a high-impact shine, or simple, soft-focus airbrush gradient effects that add a professional, modern twist to your polish.',
     cards: [
       {
         frontImage: '/treatments/level2/level2.1.jpeg',
@@ -86,6 +89,7 @@ export const categories: CategoryData[] = [
   {
     id: 'level3',
     name: 'Nat Boring',
+    description: '**Design Level 3:** This is where we combine artistic elements to create a truly unique look. The Nat Boring level involves the combination of multiple advanced techniques on all 10 nails, such as detailed line work, delicate marble effects, complex layering, the addition of subtle 3D elements, or the precise placement of high-quality gems and crystals for a touch of sparkle and dimension.',
     cards: [
       {
         frontImage: '/treatments/level3/level3.1.jpeg',
@@ -127,6 +131,7 @@ export const categories: CategoryData[] = [
   {
     id: 'level4',
     name: 'Definitely Nat Boring',
+    description: '**Design Level 4:** Reserved for the client who knows exactly what they want or wants a full custom artistic vision brought to life. This top-tier option covers complex, time-consuming artwork, hand-painted illustrations, cartoon characters, detailed portraiture, or any design that requires the maximum amount of skill and dedication. You will receive truly bespoke nail art that is guaranteed to turn heads.',
     cards: [
       {
         frontImage: '/treatments/level4/level4.1.jpeg',

@@ -13,6 +13,8 @@ const ReadyToBook = (
     subtitle = 'Click the button below to schedule your personalized nail artistry appointment in Haarlem, North Holland, Netherlands.',
     button = 'Book Now'
   }: ReadyToBookProps) => {
+  const bookingUrl = "https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600";
+
   return (
     <section className="py-16 md:px-8 dark:bg-gray-800 text-center mt-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -23,7 +25,7 @@ const ReadyToBook = (
           {subtitle}
         </p>
         <Link
-          href="/booking"
+          href={bookingUrl}
           className="px-8 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark transition duration-300 inline-block"
           aria-label="Visit inspiration gallery"
         >
