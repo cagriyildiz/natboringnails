@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from "next/link";
 
 export default function HeroV2() {
+  const bookingUrl = "https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600";
+
   return (
     <div className="flex-grow relative z-10 flex flex-col">
       <section
@@ -19,7 +21,7 @@ export default function HeroV2() {
             anything but dull.
           </p>
           <Link
-            href="/booking"
+            href={bookingUrl}
             className="px-8 py-4 bg-secondary text-white font-semibold text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
           >
             Book Now
