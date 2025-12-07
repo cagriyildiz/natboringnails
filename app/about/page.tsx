@@ -25,11 +25,11 @@ export default function AboutMePage() {
         subtitle="My Story, My Passion"
         opacity="20"
       />
-      <main className="flex-grow w-full py-8 md:py-12 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <div className="flex flex-col md:flex-row items-center justify-center bg-background-brand dark:bg-gray-800 p-8 md:p-12 rounded-lg shadow-xl max-w-5xl mx-auto">
+      <main className="">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:px-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-[-40px] lg:mt-[-80px]">
+          <div className="flex flex-col md:flex-row items-center justify-center">
             <div className="w-full flex-shrink-0 mb-8 md:mb-0 md:mr-8 md:w-1/3">
-              <div className="relative w-full aspect-square max-w-[250px] mx-auto rounded-full overflow-hidden border-4 border-primary-brand dark:border-primary-light-brand shadow-md">
+              <div className="relative w-full aspect-square max-w-[350px] mx-auto rounded-full overflow-hidden border-4 border-primary-brand dark:border-primary-light-brand shadow-md">
                 <Image
                   src="/nathal.png"
                   alt="Nathalja - Your Nail Artist at Natboringnails"
@@ -40,7 +40,7 @@ export default function AboutMePage() {
               </div>
             </div>
             <div className="md:w-2/3 text-left">
-              <h2 className="text-3xl font-kindred font-bold text-gray-900 dark:text-white mb-6"> {/* Added mb-6 here */}
+              <h2 className="text-3xl font-kindred font-bold text-gray-900 dark:text-white mb-6">
                 Hey there, I&apos;m Nathalja!
               </h2>
               <div className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -60,12 +60,12 @@ export default function AboutMePage() {
               </div>
             </div>
           </div>
-
-          <ReadyToBook
-            title="Ready for Nat-Boring Nails?"
-            subtitle="Ready to experience the Natboringnails difference? Reserve your personalized nail artistry appointment in Haarlem today."
-          />
         </div>
+
+        <ReadyToBook
+          title="Ready for Nat-Boring Nails?"
+          subtitle="Ready to experience the Natboringnails difference? Reserve your personalized nail artistry appointment in Haarlem today."
+        />
       </main>
     </div>
   );
