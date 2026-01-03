@@ -39,7 +39,7 @@ const MyPromises = () => {
     <section
       className="max-w-7xl mx-auto px-6 py-20 md:px-8 mt-32 dark:bg-gray-800 rounded-lg shadow-lg border-t-2 border-gray-100 bg-[url('/bg3.png')]">
       <h2
-        className="text-center text-4xl sm:text-5xl font-kindred font-extrabold mb-6 drop-shadow-lg">
+        className="text-center text-4xl sm:text-5xl font-semibold mb-6 drop-shadow-lg">
         My Promise
       </h2>
       <div className="text-center text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">

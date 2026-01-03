@@ -7,7 +7,7 @@ export default function MeetTheTeam() {
   return (
     <section id="meet-the-team" className="py-16 px-6 md:px-8 bg-gray-50 rounded-xl max-w-7xl mx-auto my-32">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-kindred font-extrabold text-gray-900 mb-4">Meet the Team</h2>
+        <h2 className="text-4xl font-semibold text-gray-900 mb-4">Meet the Team</h2>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
           As your dedicated nail artist, I pour my heart into every detail. And with my sweet furry assistant, we ensure your time here is not only about beautiful nails but also about ultimate comfort and a friendly vibe.
         </p>

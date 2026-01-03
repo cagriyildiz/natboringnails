@@ -18,7 +18,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
     >
       <div className="w-full max-w-full px-6">
         <div className="my-10">
-          <h2 className="text-4xl font-semibold font-bold text-gray-900 dark:text-white text-center">
+          <h2 className="text-4xl font-semibold text-gray-900 dark:text-white text-center">
             {name}
           </h2>
           <div className="text-md max-w-3xl mx-auto text-center leading-relaxed mt-4">

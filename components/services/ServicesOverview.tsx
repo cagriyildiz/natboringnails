@@ -34,7 +34,7 @@ export default function ServicesOverview({withHeader, className}: ServicesOvervi
       <div className={`relative mx-auto${withHeader ? " z-10 max-w-7xl px-6 py-16 my-32 md:px-8 bg-gray-50 rounded-xl" : ""}`}>
         {withHeader && (
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-kindred font-extrabold text-gray-900 mb-4">Your Nails, My Artistry</h2>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-4">Your Nails, My Artistry</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               From strengthening BIAB foundations to breathtaking custom designs, each service is meticulously crafted to
               bring your unique vision to life.
