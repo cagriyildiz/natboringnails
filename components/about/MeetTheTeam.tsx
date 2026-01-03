@@ -24,8 +24,7 @@ export default function MeetTheTeam() {
                 src={member.image}
                 alt={member.name}
                 fill
-                style={{ objectFit: 'cover' }}
-                objectPosition="top"
+                style={{ objectFit: 'cover', objectPosition: 'top' }}
                 priority={index === 0}
               />
             </div>
