@@ -40,7 +40,7 @@ export default function AboutMePage() {
               </div>
             </div>
             <div className="md:w-2/3 text-left">
-              <h2 className="text-3xl font-kindred font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
                 Hey there, I&apos;m Nathalja!
               </h2>
               <div className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
