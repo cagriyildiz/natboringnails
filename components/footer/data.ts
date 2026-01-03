@@ -5,7 +5,7 @@ export const footerNavLinks = [
   { name: 'Price List', href: '/price-list.pdf', external: true },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Book Now', href: '/booking', isButton: true },
+  { name: 'Book Now', href: 'https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600', isButton: true },
 ];
 
 export const socialLinks = [
