@@ -70,7 +70,7 @@ const ContactForm = () => {
               className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm
                              focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]
                              bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-colors duration-200"
-              placeholder="John Doe"
+              placeholder=""
             />
           </div>
           <div>
@@ -84,7 +84,7 @@ const ContactForm = () => {
               className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm
                              focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]
                              bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-colors duration-200"
-              placeholder="john.doe@example.com"
+              placeholder=""
             />
           </div>
           <div>
@@ -97,7 +97,7 @@ const ContactForm = () => {
               className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm
                              focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]
                              bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-colors duration-200"
-              placeholder="Appointment Inquiry, Custom Design, etc."
+              placeholder=""
             />
           </div>
           <div>
@@ -111,7 +111,7 @@ const ContactForm = () => {
               className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm
                              focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]
                              bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-colors duration-200"
-              placeholder="Tell me about your nail needs or questions!"
+              placeholder=""
             ></textarea>
           </div>
           <div>
