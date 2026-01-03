@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-    /* Define a new font family utility 'font-kindred' for your local font */
     --font-kindred: var(--font-tan-kindred), serif;
 
-    /* Define a new font family utility 'font-open-sans' for your Google Font */
     --font-open-sans: var(--font-open-sans), sans-serif;
 
-    /* Define a new font family utility 'font-amatic-sc' for your Google Font */
-    --font-amatic-sc: var(--font-amatic-sc), cursive; /* Ensure fallback matches the font style */
+    --font-amatic-sc: var(--font-amatic-sc), cursive;
+
+    --animate-border-beam: border-beam 4s linear infinite;
 
     --color-primary: #6326BA;
     --color-primary-light: #C4B0F6;
@@ -141,4 +140,28 @@
 
 .animate-bounce-once {
     animation: bounceOnce 1.2s ease-out 0.8s 1; /* Play once with a delay */
+}
+
+@keyframes border-beam {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.small-beam-gradient {
+    /* We narrow the white part to only 5% of the circle (47% to 52%) */
+    background: conic-gradient(
+            from 90deg at 50% 50%,
+            transparent 0%,
+            transparent 10%,
+            #22c55e 42%, /* Green */
+            #3b82f6 47%, /* Blue */
+            #a855f7 53%, /* Purple */
+            #ec4899 58%, /* Pink */
+            transparent 90%,
+            transparent 100%
+    );
 }

@@ -65,18 +65,36 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {footerNavLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {footerNavLinks.map((link) => {
+                if (link.isButton) {
+                  return (
+                    <li key={link.name} className="flex justify-center md:justify-start">
+                      <Link
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative md:-ml-2 inline-flex items-center justify-center p-[1px] overflow-hidden rounded-md group"
+                      >
+                        <span className="absolute inset-[-1000%] animate-border-beam small-beam-gradient" />
+                        <span className="relative px-2 py-1 bg-gray-800 rounded-[5px] transition-colors group-hover:text-white">
+                          {link.name}
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="hover:text-white transition-colors duration-200"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -84,13 +102,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Contact Me</h3>
             <div className="space-y-2">
               <p className="flex items-center justify-center md:justify-start">
-                <FaMapMarkerAlt className="mr-2 flex-shrink-0" /> {contactInfo.address}
+                <FaMapMarkerAlt className="mr-2 flex-shrink-0"/> {contactInfo.address}
               </p>
               <p className="flex items-center justify-center md:justify-start">
-                <FaPhone className="mr-2 flex-shrink-0" /> {contactInfo.phone}
+                <FaPhone className="mr-2 flex-shrink-0"/> {contactInfo.phone}
               </p>
               <p className="flex items-center justify-center md:justify-start">
-                <FaEnvelope className="mr-2 flex-shrink-0" /> {contactInfo.email}
+                <FaEnvelope className="mr-2 flex-shrink-0"/> {contactInfo.email}
               </p>
             </div>
             <div className="mt-4">
