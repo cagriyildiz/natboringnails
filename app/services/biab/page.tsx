@@ -21,7 +21,7 @@ const BiabServicePage: React.FC = () => {
     {
       title: "BIAB Natural",
       description: "A clear or subtle nude BIAB application that focuses solely on strengthening and enhancing your natural nails. Perfect for a clean, understated look.",
-      price: 60,
+      price: 65,
     },
     {
       title: "BIAB + Gel Polish",
