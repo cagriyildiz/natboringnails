@@ -93,14 +93,14 @@ export default function Navigation() {
       >
         {/* Mobile Menu Drawer */}
         <div
-          className={`fixed top-0 right-0 w-64 h-full bg-secondary dark:bg-gray-700 z-50 shadow-lg p-6
+          className={`fixed top-0 right-0 w-64 h-full bg-gray-800 z-50 shadow-lg p-6
             transform transition-transform ease-in-out duration-300
             ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
           onClick={(e) => e.stopPropagation()}
         >
           <button
             onClick={toggleMobileMenu}
-            className="absolute top-4 right-4 text-gray-800 dark:text-white focus:outline-none"
+            className="absolute top-4 right-4 text-gray-300 dark:text-white focus:outline-none"
             aria-label="Close navigation menu"
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -116,8 +116,8 @@ export default function Navigation() {
                   onClick={toggleMobileMenu}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className={`text-gray-800 dark:text-gray-100 text-xl hover:text-primary dark:hover:text-primary-light transition-colors duration-200
-                    ${pathname === link.href ? 'font-bold text-primary dark:text-primary-light' : ''}`}
+                  className={`text-gray-300 text-xl hover:text-gray-200 transition-colors duration-200
+                    ${pathname === link.href ? 'font-bold text-secondary' : ''}`}
                 >
                   {link.name}
                 </Link>
@@ -130,11 +130,13 @@ export default function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={toggleMobileMenu} // Close menu when clicked
-                className={`text-gray-800 dark:text-gray-100 text-xl hover:text-primary dark:hover:text-primary-light transition-colors duration-200
-                    ${pathname === "/booking" ? 'font-bold text-primary dark:text-primary-light' : ''}`}
+                className={'relative -ml-2 inline-flex items-center justify-center p-[1px] overflow-hidden rounded-md group text-gray-300 text-xl hover:text-gray-200 transition-colors duration-200'}
                 aria-label="Book your appointment"
               >
-                Book Now
+                <span className="absolute inset-[-1000%] animate-border-beam small-beam-gradient" />
+                <span className="relative px-2 py-1 bg-gray-800 rounded-[5px] transition-colors group-hover:text-white">
+                  Book Now
+                </span>
               </Link>
             </li>
           </ul>
