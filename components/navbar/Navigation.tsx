@@ -126,7 +126,9 @@ export default function Navigation() {
             {/* Mobile-only "Book Now" Button */}
             <li className="">
               <Link
-                href="/booking"
+                href="https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={toggleMobileMenu} // Close menu when clicked
                 className={`text-gray-800 dark:text-gray-100 text-xl hover:text-primary dark:hover:text-primary-light transition-colors duration-200
                     ${pathname === "/booking" ? 'font-bold text-primary dark:text-primary-light' : ''}`}
