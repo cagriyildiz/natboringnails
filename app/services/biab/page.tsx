@@ -61,7 +61,7 @@ const BiabServicePage: React.FC = () => {
       <main className="w-full">
         <section className="py-16 bg-background-brand dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-8 text-center">
-            <h2 className="text-3xl font-kindred font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-5xl font-semibold text-gray-900 dark:text-white mb-6">
               What is BIAB?
             </h2>
             <div className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
@@ -78,7 +78,7 @@ const BiabServicePage: React.FC = () => {
         <section className="py-16 bg-gray-50 dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <h2
-              className="text-3xl font-kindred font-bold text-primary-brand dark:text-primary-light-brand mb-8 text-center">
+              className="text-5xl font-semibold text-primary-brand dark:text-primary-light-brand mb-8 text-center">
               Application Process
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,7 +122,7 @@ const BiabServicePage: React.FC = () => {
 
         <section className="py-16 bg-background-brand dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-8 text-center">
-            <h2 className="text-3xl font-kindred font-bold text-gray-900 dark:text-white mb-8">
+            <h2 className="text-5xl font-semibold font-bold text-gray-900 dark:text-white mb-8">
               Products I Trust
             </h2>
 
