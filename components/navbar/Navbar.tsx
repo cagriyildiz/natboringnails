@@ -17,7 +17,7 @@ function Navbar() {
   const [headerOpen, setHeaderOpen] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   return (
-    <div className="bg-primary py-2 px-8 text-3xl h-30">
+    <div className="bg-primary py-2 px-8 text-md h-30">
       <div className="h-full max-w-7xl m-auto flex items-center justify-between">
         <motion.span
           className="font-bold w-18 md:w-fit md:block"
@@ -34,7 +34,7 @@ function Navbar() {
             />
           </div>
         </motion.span>
-        <div className="flex gap-4 md:gap-8">
+        <div className="flex gap-4 md:gap-6">
           {!isDesktop && <HeaderDrawer
             open={headerOpen}
             setOpen={setHeaderOpen}
@@ -75,7 +75,7 @@ function Navbar() {
             </DrawerContent>
           </HeaderDrawer>}
           {isDesktop && <>
-            <a href="/price-list.pdf" className="font-bold text-secondary!">Price List</a>
+            <a href="/price-list.pdf" className="text-secondary!">Price List</a>
             <a href="#about">About</a>
             <a href="#contact" onClick={handleOnClick}>Contact</a>
             <a href="#location">Location</a>

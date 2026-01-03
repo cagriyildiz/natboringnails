@@ -14,9 +14,9 @@ export const Treatment = ({item}: {
 
             <div className="m-auto py-4 md:flex-1/2">
               <div className="flex flex-col gap-12">
-                <h2 className={`font-fancy text-7xl text-${item.color} font-bold`}>{item.title} <span
+                <h2 className={`text-7xl text-${item.color} font-bold`}>{item.title} <span
                   className="text-white">{item.category}</span></h2>
-                <h3 className={`font-fancy text-4xl text-${item.color} font-bold`}>{item.price}</h3>
+                <h3 className={`text-4xl text-${item.color} font-bold`}>{item.price}</h3>
                 <p>{item.desc}</p>
               </div>
             </div>

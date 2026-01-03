@@ -1,37 +1,144 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans:ital,wght@0,300;1,300&display=swap");
 @import "tailwindcss";
 
 @theme {
-    --font-text: "Open Sans", "sans-serif";
-    --font-fancy: "Amatic SC", "sans-serif";
+    /* Define a new font family utility 'font-kindred' for your local font */
+    --font-kindred: var(--font-tan-kindred), serif;
+
+    /* Define a new font family utility 'font-open-sans' for your Google Font */
+    --font-open-sans: var(--font-open-sans), sans-serif;
+
+    /* Define a new font family utility 'font-amatic-sc' for your Google Font */
+    --font-amatic-sc: var(--font-amatic-sc), cursive; /* Ensure fallback matches the font style */
+
     --color-primary: #6326BA;
     --color-primary-light: #C4B0F6;
+    --color-primary-dark: #521C9A;
     --color-secondary: #58B36B;
     --color-background: #F2F0EB;
+    --color-secondary-dark: #499558;
 }
 
-html {
-    height:100%;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif;
+@layer base {
+    html {
+        /* Set your global default font using the Tailwind variable */
+        /* This will apply Open Sans by default to all text unless overridden by other classes */
+        font-family: var(--font-open-sans), serif;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        height: 100%; /* Ensures html takes full height for scroll-snap */
+    }
+
+    body {
+        color: white;
+    }
+
+    /* If you still want paragraphs to specifically use Open Sans, ensure they don't override font-kindred */
+    p {
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts 20px below its final position */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at its normal position */
+    }
 }
 
-body {
-    font-family: "Open Sans", sans-serif;
-    color: white;
+@keyframes slow-zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08); /* Final zoom level */
+    }
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards; /* Applies the animation */
+    opacity: 0; /* Ensures it starts invisible */
 }
 
-p {
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
+.delay-200 { /* This is for staggering the animation */
+    animation-delay: 0.2s;
 }
 
+.custom-shape-divider-bottom-1748187659 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1748187659 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 43px;
+}
+
+.custom-shape-divider-bottom-1748187659 .shape-fill {
+    fill: #FAFAFF;
+}
+
+@keyframes heroZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); } /* Slightly zoom in */
+    100% { transform: scale(1); }
+}
+
+.animate-hero-zoom {
+    animation: heroZoom 40s ease-in-out infinite; /* Very slow, continuous zoom */
+}
+
+/* Optional: Existing animations you might have from previous steps */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes bounceOnce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-8px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-4px);
+    }
+}
+
+.animate-bounce-once {
+    animation: bounceOnce 1.2s ease-out 0.8s 1; /* Play once with a delay */
+}

@@ -4,7 +4,7 @@ import {Treatment} from "./Treatment";
 function Treatments() {
 
   return (
-    <div id="inspiration" className="bg-linear-to-b from-secondary to-primary">
+    <div id="inspiration" className="">
       <div className="max-w-7xl m-auto">
         {items.map((item, idx) => (
           <Treatment key={idx} item={item} />)
