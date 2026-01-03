@@ -9,6 +9,6 @@ export const teamMembers = [
     name: "Sütlaç",
     title: "Personal Assistant",
     image: "/suto.jpeg",
-    bio: "My furry assistant, Sütlaç, but you can call her **Süto**! This 1.5-year-old White Shepherd is the heart of the salon's cozy atmosphere. She specializes in **tail-wagging greetings** that instantly make you feel **right at home**. You'll often find her curled up for a comforting nap nearby, adding that special touch of warmth and relaxation to your visit.",
+    bio: "My furry assistant, Sütlaç, but you can call her **Süto**! This White Shepherd is the heart of the salon's cozy atmosphere. She specializes in **tail-wagging greetings** that instantly make you feel **right at home**. You'll often find her curled up for a comforting nap nearby, adding that special touch of warmth and relaxation to your visit.",
   }
 ];
