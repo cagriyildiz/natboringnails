@@ -22,6 +22,8 @@ export default function HeroV2() {
           </p>
           <Link
             href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 bg-secondary text-white font-semibold text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
           >
             Book Now

@@ -26,6 +26,8 @@ const ReadyToBook = (
         </p>
         <Link
           href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-8 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark transition duration-300 inline-block"
           aria-label="Visit inspiration gallery"
         >
