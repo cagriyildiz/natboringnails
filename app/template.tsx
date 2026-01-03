@@ -8,7 +8,7 @@ import React from "react";
 import Header from "@/components/header/Header";
 
 const tanKindred = localFont({
-  src: '../public/fonts/tankindred.ttf', // Crucial: path relative to layout.tsx
+  src: '../public/fonts/tankindred.ttf', // Crucial: path relative to template.tsx
   display: 'swap', // 'swap' is generally good for user experience
   variable: '--font-tan-kindred', // Define a CSS variable for Tailwind
 });
