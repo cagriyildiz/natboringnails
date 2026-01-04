@@ -14,18 +14,21 @@ export default function ServicesOverview({withHeader, className}: ServicesOvervi
       description: 'Strengthen and grow your natural nails for lasting beauty and health.',
       backgroundImage: '/treatments/biab1/biab1.2.png',
       link: '/services/biab',
+      buttonText: 'View BIAB Services'
     },
     {
       title: 'Nail Art',
       description: 'Unleash creativity with unique designs tailored to your personal style.',
       backgroundImage: '/treatments/level4/level4.3.jpeg',
       link: '/services/nail-art',
+      buttonText: 'Explore Nail Art Options'
     },
     {
       title: 'Gel Polish Manicure',
       description: 'Experience flawless, long-lasting color for vibrant, chip-free nails.',
       backgroundImage: '/treatments/biab2/biab2.3.jpeg',
       link: '/services/gel-polish',
+      buttonText: 'See Gel Polish Details'
     },
   ];
 
@@ -71,7 +74,7 @@ export default function ServicesOverview({withHeader, className}: ServicesOvervi
                       className="mt-auto px-6 py-3 bg-[var(--color-primary)] text-white font-semibold rounded-full shadow-md
                                    hover:bg-[var(--color-primary-dark)] transition-colors duration-300
                                    inline-block self-start text-center">
-                  Learn More
+                  {service.buttonText}
                 </Link>
               </div>
             </div>
