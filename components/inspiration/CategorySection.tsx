@@ -14,10 +14,10 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
   return (
     <section
       id={id}
-      className="relative z-10 max-w-7xl mx-auto px-6 py-0 md:px-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg border-t-2 border-gray-100 mt-[-40px] lg:mt-[-80px] mb-20 md:mb-30 last-of-type:mb-0"
+      className="relative z-10 max-w-7xl mx-auto py-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg border-t-2 border-gray-100 first-of-type:mt-[-40px] first-of-type:lg:mt-[-80px] mb-20 last-of-type:mb-0"
     >
-      <div className="w-full max-w-full px-6">
-        <div className="my-10">
+      <div className="w-full max-w-full md:px-6">
+        <div className="my-10 px-6">
           <h2 className="text-4xl font-semibold text-gray-900 dark:text-white text-center">
             {name}
           </h2>
