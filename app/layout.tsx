@@ -6,9 +6,10 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import React from "react";
 import Header from "@/components/header/Header";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const tanKindred = localFont({
-  src: '../public/fonts/tankindred.ttf', // Crucial: path relative to template.tsx
+  src: '../public/fonts/tankindred.ttf', // Crucial: path relative to layout.tsx
   display: 'swap', // 'swap' is generally good for user experience
   variable: '--font-tan-kindred', // Define a CSS variable for Tailwind
 });
@@ -68,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${openSans.variable} ${amaticSc.variable} ${tanKindred.variable}`}>
       <body className="antialiased">
+        <ScrollToTop />
         <Header />
         {children}
         <Footer/>
