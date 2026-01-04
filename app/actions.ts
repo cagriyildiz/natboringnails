@@ -13,8 +13,8 @@ export async function sendEmail(formData: FormData) {
     await resend.emails.send({
       from: 'Contact Form <info@natboringnails.nl>',
       to: 'nathaljanebbeling@gmail.com',
-      subject: `New Message: ${subject}`,
-      replyTo: email as string,
+      subject: `[Natboringnails] : ${subject}`,
+      replyTo: formData.get('email') as string,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
     return {
