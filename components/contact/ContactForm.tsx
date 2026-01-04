@@ -1,7 +1,24 @@
-import React from 'react';
+"use client"
+import React, {useState} from 'react';
 import {FaInstagram} from "react-icons/fa";
+import {sendEmail} from "@/app/actions";
 
 const ContactForm = () => {
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null, msg: string }>({ type: null, msg: '' });
+  const [isPending, setIsPending] = useState(false);
+
+  async function handleSubmit(formData: FormData) {
+    setIsPending(true);
+    const result = await sendEmail(formData);
+    setIsPending(false);
+
+    if (result.success) {
+      setStatus({ type: 'success', msg: result.message });
+    } else {
+      setStatus({ type: 'error', msg: result.message });
+    }
+  }
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
       <section className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-xl p-8 flex flex-col justify-between">
@@ -58,10 +75,16 @@ const ContactForm = () => {
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
           Send Me a Message
         </h2>
-        <form action="#" method="POST" className="space-y-6">
+        <form action={handleSubmit} className="space-y-6">
+          {status.type && (
+            <div className={`p-4 rounded-md ${status.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+              {status.msg}
+            </div>
+          )}
           <div>
-            <label htmlFor="name" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Your
-              Name</label>
+            <label htmlFor="name" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Your Name
+            </label>
             <input
               type="text"
               name="name"
@@ -74,8 +97,9 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Your
-              Email</label>
+            <label htmlFor="email" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Your Email
+            </label>
             <input
               type="email"
               name="email"
@@ -88,8 +112,9 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="subject"
-                   className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+            <label htmlFor="subject" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Subject
+            </label>
             <input
               type="text"
               name="subject"
@@ -101,8 +126,9 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Your
-              Message</label>
+            <label htmlFor="message" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Your Message
+            </label>
             <textarea
               name="message"
               id="message"
@@ -111,17 +137,16 @@ const ContactForm = () => {
               className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm
                              focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]
                              bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition-colors duration-200"
-              placeholder=""
-            ></textarea>
+              placeholder=""></textarea>
           </div>
           <div>
             <button
               type="submit"
+              disabled={isPending}
               className="w-full inline-flex justify-center py-4 px-6 border border-transparent rounded-full shadow-sm
                              text-lg font-semibold text-white bg-[var(--color-secondary)] cursor-pointer
                              hover:bg-[var(--color-secondary-dark)] focus:outline-none focus:ring-2 focus:ring-offset-2
-                             focus:ring-[var(--color-secondary)] transition-colors duration-300"
-            >
+                             focus:ring-[var(--color-secondary)] transition-colors duration-300">
               Send Message
             </button>
           </div>
