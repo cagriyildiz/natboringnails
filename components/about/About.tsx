@@ -21,8 +21,8 @@ function About() {
               <Image
                 src="/nathal.png"
                 alt="Nathalja Nebbeling"
-                width={900}
-                height={900}
+                width={148}
+                height={148}
                 draggable={false}
                 className="rounded-3xl object-cover object-center min-h-100 max-h-100 md:min-h-148 md:max-h-148"
               ></Image>
