@@ -1,14 +1,15 @@
 "use client";
 
-import React, {useEffect, useRef, useState} from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules'; // Removed Navigation
+import React from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation, Pagination} from 'swiper/modules'; // Removed Navigation
 import ReactMarkdown from "react-markdown";
 import InspirationCard from "@/components/card/InspirationCard";
-import { CardData } from "@/app/inspiration/data";
+import {CardData} from "@/app/inspiration/data";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 interface CategorySectionProps {
   id: string;
@@ -34,15 +35,13 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
           </div>
         </div>
 
-        {cards.length === 0 ? (
-          <p className="text-center text-gray-500 dark:text-gray-400">No inspiration cards available for this
-            category.</p>
-        ) : (
-          <div className="px-0">
+        {cards.length > 0 && (
+          <div className="relative group px-0">
             <Swiper
-              modules={[Pagination]}
+              modules={[Navigation, Pagination]}
               spaceBetween={10}
               slidesPerView={1}
+              navigation
               watchSlidesProgress
               grabCursor
               pagination={{

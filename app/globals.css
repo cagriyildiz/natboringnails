@@ -172,7 +172,6 @@
 }
 
 .small-beam-gradient {
-    /* We narrow the white part to only 5% of the circle (47% to 52%) */
     background: conic-gradient(
             from 90deg at 50% 50%,
             transparent 0%,
@@ -187,10 +186,48 @@
 }
 
 .swiper-button-next, .swiper-button-prev {
-    background: white;
-    padding: 30px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    display: none !important;
+}
+
+@media (min-width: 1024px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: flex !important;
+        opacity: 0;
+        pointer-events: none; /* Prevents clicking invisible buttons */
+        transition: all 0.3s ease-in-out !important;
+        background-color: lightgrey;
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        color: #521c9a !important;
+    }
+
+    /* Make the arrows smaller and cleaner */
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 18px !important;
+        font-weight: bold;
+    }
+
+    .group:hover .swiper-button-next,
+    .group:hover .swiper-button-prev {
+        opacity: 0.5;
+        pointer-events: auto;
+    }
+
+    .swiper-button-next:hover ,
+    .swiper-button-prev:hover {
+        opacity: 1 !important;
+        pointer-events: auto;
+    }
+
+    .swiper-button-disabled {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        cursor: default;
+    }
 }
 
 .swiper-pagination-bullet {
@@ -203,5 +240,5 @@
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #521c9a !important; /* Your brand purple */
+    background-color: #521c9a !important;
 }
