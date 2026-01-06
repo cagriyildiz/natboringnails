@@ -12,7 +12,7 @@ const InspirationCard: React.FC<InspirationCardProps> = ({ frontImage, title, is
     <div
       className="w-full bg-white dark:bg-gray-800 md:rounded-lg shadow-md overflow-hidden flex flex-col h-full"
     >
-      <div className="relative w-full aspect-[4/5] md:aspect-square overflow-hidden">
+      <div className="relative w-full aspect-[4/5] bg-gray-200 md:aspect-square overflow-hidden">
         <Image
           src={frontImage}
           alt={title}
