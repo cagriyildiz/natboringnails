@@ -12,19 +12,15 @@ const InspirationCard: React.FC<InspirationCardProps> = ({ frontImage, title, de
     <div
       className="w-full bg-white dark:bg-gray-800 md:rounded-lg shadow-md overflow-hidden flex flex-col h-full"
     >
-      <div className="relative w-full h-72 md:h-80 lg:h-96 flex-shrink-0">
+      <div className="relative w-full aspect-[4/5] md:aspect-square overflow-hidden">
         <Image
           src={frontImage}
-          alt={`Inspiration: ${title}`}
+          alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: 'cover' }}
-          className="md:rounded-t-lg"
-          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
-
-
     </div>
   );
 };

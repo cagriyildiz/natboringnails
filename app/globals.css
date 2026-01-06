@@ -15,6 +15,9 @@
     --color-secondary: #58B36B;
     --color-background: #F2F0EB;
     --color-secondary-dark: #499558;
+
+    --swiper-theme-color: #521c9a;
+    --swiper-navigation-size: 24px;
 }
 
 @layer base {
@@ -61,6 +64,23 @@
     }
     100% {
         transform: scale(1.08); /* Final zoom level */
+    }
+}
+
+@layer components {
+    /* This class now only contains "Desktop" visual styles */
+    @media (min-width: 768px) {
+        .category-container {
+            @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg border-t-2 border-gray-100 mb-20;
+        }
+
+        .category-container:first-of-type {
+            @apply mt-[-40px] lg:mt-[-80px];
+        }
+
+        .category-container:last-of-type {
+            @apply mb-0;
+        }
     }
 }
 
@@ -164,4 +184,24 @@
             transparent 90%,
             transparent 100%
     );
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background: white;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.swiper-pagination-bullet {
+    background-color: #cbd5e1 !important;
+    opacity: 1 !important;
+    width: 8px !important;
+    height: 8px !important;
+    margin: 0 5px !important;
+    transition: all 0.3s ease-out !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #521c9a !important; /* Your brand purple */
 }

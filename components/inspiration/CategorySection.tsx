@@ -1,7 +1,14 @@
+"use client";
+
 import React from 'react';
-import InspirationCard from "@/components/card/InspirationCard";
-import {CardData} from "@/app/inspiration/data";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules'; // Removed Navigation
 import ReactMarkdown from "react-markdown";
+import InspirationCard from "@/components/card/InspirationCard";
+import { CardData } from "@/app/inspiration/data";
+
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 interface CategorySectionProps {
   id: string;
@@ -14,7 +21,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
   return (
     <section
       id={id}
-      className="relative z-10 max-w-7xl mx-auto py-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg border-t-2 border-gray-100 first-of-type:mt-[-40px] first-of-type:lg:mt-[-80px] mb-20 last-of-type:mb-0"
+      className="relative z-10 max-w-7xl mx-auto py-10 category-container"
     >
       <div className="w-full max-w-full md:px-6">
         <div className="my-10 px-6">
@@ -25,14 +32,35 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
             <ReactMarkdown>{description}</ReactMarkdown>
           </div>
         </div>
+
         {cards.length === 0 ? (
           <p className="text-center text-gray-500 dark:text-gray-400">No inspiration cards available for this
             category.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cards.map((card, index) => (
-              <InspirationCard key={index} {...card} />
-            ))}
+          <div className="px-0">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={10}
+              slidesPerView={1}
+              grabCursor
+              pagination={{
+                clickable: true,
+                dynamicBullets: true
+              }}
+              breakpoints={{
+                1024: {
+                  slidesPerView: 2.3,
+                  spaceBetween: 20,
+                },
+              }}
+              className="pb-10"
+            >
+              {cards.map((card, index) => (
+                <SwiperSlide key={index}>
+                  <InspirationCard {...card} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         )}
       </div>
