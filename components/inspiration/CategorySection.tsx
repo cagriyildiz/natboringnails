@@ -42,6 +42,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
               modules={[Pagination]}
               spaceBetween={10}
               slidesPerView={1}
+              watchSlidesProgress
               grabCursor
               pagination={{
                 clickable: true,
@@ -57,7 +58,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
             >
               {cards.map((card, index) => (
                 <SwiperSlide key={index}>
-                  <InspirationCard {...card} />
+                  <InspirationCard {...card} isPriority={index < 2} />
                 </SwiperSlide>
               ))}
             </Swiper>

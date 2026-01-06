@@ -4,10 +4,10 @@ import Image from 'next/image';
 interface InspirationCardProps {
   frontImage: string;
   title: string;
-  description: string;
+  isPriority?: boolean;
 }
 
-const InspirationCard: React.FC<InspirationCardProps> = ({ frontImage, title, description }) => {
+const InspirationCard: React.FC<InspirationCardProps> = ({ frontImage, title, isPriority }) => {
   return (
     <div
       className="w-full bg-white dark:bg-gray-800 md:rounded-lg shadow-md overflow-hidden flex flex-col h-full"
@@ -19,6 +19,8 @@ const InspirationCard: React.FC<InspirationCardProps> = ({ frontImage, title, de
           fill
           style={{ objectFit: 'cover' }}
           sizes="(max-width: 768px) 100vw, 50vw"
+          priority={isPriority}
+          loading={isPriority ? "eager" : "lazy"}
         />
       </div>
     </div>
