@@ -109,6 +109,15 @@ export default function Navigation() {
           </button>
 
           <ul className="flex flex-col space-y-6 mt-12">
+            <li className="">
+              <Link
+                href="/"
+                onClick={toggleMobileMenu}
+                className={`text-gray-300 text-xl hover:text-gray-200 transition-colors duration-200
+                    ${pathname === "/" ? 'font-bold text-secondary' : ''}`}>
+                Home
+              </Link>
+            </li>
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
@@ -133,7 +142,7 @@ export default function Navigation() {
                 className={'relative -ml-2 inline-flex items-center justify-center p-[1px] overflow-hidden rounded-md group text-gray-300 text-xl hover:text-gray-200 transition-colors duration-200'}
                 aria-label="Book your appointment"
               >
-                <span className="absolute inset-[-1000%] animate-border-beam small-beam-gradient" />
+                <span className="absolute inset-[-1000%] animate-border-beam small-beam-gradient"/>
                 <span className="relative px-2 py-1 bg-gray-800 rounded-[5px] transition-colors group-hover:text-white">
                   Book Now
                 </span>
