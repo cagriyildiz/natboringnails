@@ -58,7 +58,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
             >
               {cards.map((card, index) => (
                 <SwiperSlide key={index}>
-                  <InspirationCard {...card} isPriority={index < 2} />
+                  <InspirationCard {...card} isPriority={index < 6} />
                 </SwiperSlide>
               ))}
             </Swiper>
