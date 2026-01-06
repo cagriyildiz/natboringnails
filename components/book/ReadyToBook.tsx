@@ -1,5 +1,8 @@
+"use client"; // Must be a client component to track clicks
+
 import React from 'react';
 import Link from "next/link";
+import { sendGAEvent } from '@next/third-parties/google';
 
 interface ReadyToBookProps {
   title?: string,
@@ -17,6 +20,15 @@ const ReadyToBook = (
   }: ReadyToBookProps) => {
   const bookingUrl = "https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600";
 
+  // This function sends the data to Google Analytics
+  const trackBookingClick = () => {
+    sendGAEvent('event', 'click_booking_cta', {
+      event_category: 'Conversion',
+      event_label: button,
+      page_path: window.location.pathname,
+    });
+  };
+
   return (
     <section className={`${className} py-16 md:px-8 dark:bg-gray-800 text-center mt-12`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -30,8 +42,9 @@ const ReadyToBook = (
           href={bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={trackBookingClick}
           className="px-8 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-primary-dark transition duration-300 inline-block"
-          aria-label="Visit inspiration gallery"
+          aria-label={button}
         >
           {button}
         </Link>
