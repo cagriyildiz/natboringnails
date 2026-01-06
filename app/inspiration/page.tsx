@@ -1,9 +1,8 @@
 import React from 'react';
-import CategorySection from "@/components/inspiration/CategorySection";
 import Banner from "@/components/banner/Banner";
-import {categories} from "./data";
 import {Metadata} from "next";
 import ReadyToBook from "@/components/book/ReadyToBook";
+import CategoryListWrapper from "@/components/inspiration/CategoryListWrapper";
 
 export const metadata: Metadata = {
   title: 'Nail Art Inspiration Gallery',
@@ -26,15 +25,7 @@ const InspirationPage: React.FC = () => {
       />
 
       <main>
-        {categories.map((category) => (
-          <CategorySection
-            key={category.id}
-            id={category.id}
-            name={category.name}
-            description={category.description}
-            cards={category.cards}
-          />
-        ))}
+        <CategoryListWrapper />
       </main>
 
       <ReadyToBook

@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules'; // Removed Navigation
 import ReactMarkdown from "react-markdown";
@@ -15,9 +15,10 @@ interface CategorySectionProps {
   name: string;
   description: string;
   cards: CardData[];
+  shouldLoadImages: boolean;
 }
 
-const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description, cards }) => {
+const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description, cards, shouldLoadImages }) => {
   return (
     <section
       id={id}
@@ -58,7 +59,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ id, name, description
             >
               {cards.map((card, index) => (
                 <SwiperSlide key={index}>
-                  <InspirationCard {...card} isPriority={index < 6} />
+                  <InspirationCard {...card} shouldLoad={shouldLoadImages} />
                 </SwiperSlide>
               ))}
             </Swiper>
