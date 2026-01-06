@@ -35,7 +35,7 @@ export default function HeroV2() {
           <div className="relative h-full w-full md:w-2/3 overflow-hidden rounded-xl border-4 border-[#c4b0f6]">
             <Image
               loading={"eager"}
-              src="/treatments/level4/level4.6.png"
+              src="/treatments/level2/level2.7.jpeg"
               alt="Close-up of elegant nail art design"
               fill
               style={{ objectFit: 'cover' }}

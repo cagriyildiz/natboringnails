@@ -47,6 +47,16 @@ export const categories: CategoryData[] = [
         title: 'Subtle Glitter Accent',
         description: 'A touch of glitter on one nail for a subtle sparkle.',
       },
+      {
+        frontImage: '/treatments/level1/level1.7.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
+      {
+        frontImage: '/treatments/level1/level1.8.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
     ],
   },
   {
@@ -81,6 +91,41 @@ export const categories: CategoryData[] = [
       },
       {
         frontImage: '/treatments/level2/level2.6.png',
+        title: 'Ombre Sunset Nails',
+        description: 'Smooth gradient from warm to cool tones resembling a sunset.',
+      },
+      {
+        frontImage: '/treatments/level2/level2.7.jpeg',
+        title: 'Ombre Sunset Nails',
+        description: 'Smooth gradient from warm to cool tones resembling a sunset.',
+      },
+      {
+        frontImage: '/treatments/level2/level2.8.jpeg',
+        title: 'Ombre Sunset Nails',
+        description: 'Smooth gradient from warm to cool tones resembling a sunset.',
+      },
+      {
+        frontImage: '/treatments/level2/level2.9.jpeg',
+        title: 'Ombre Sunset Nails',
+        description: 'Smooth gradient from warm to cool tones resembling a sunset.',
+      },
+      {
+        frontImage: '/treatments/level2/level2.10.jpeg',
+        title: 'Ombre Sunset Nails',
+        description: 'Smooth gradient from warm to cool tones resembling a sunset.',
+      },
+      {
+        frontImage: '/treatments/level2/level2.11.jpeg',
+        title: 'Ombre Sunset Nails',
+        description: 'Smooth gradient from warm to cool tones resembling a sunset.',
+      },
+      {
+        frontImage: '/treatments/level2/level2.12.jpeg',
+        title: 'Ombre Sunset Nails',
+        description: 'Smooth gradient from warm to cool tones resembling a sunset.',
+      },
+      {
+        frontImage: '/treatments/level2/level2.13.jpeg',
         title: 'Ombre Sunset Nails',
         description: 'Smooth gradient from warm to cool tones resembling a sunset.',
       },
@@ -126,6 +171,36 @@ export const categories: CategoryData[] = [
         title: 'Subtle Glitter Accent',
         description: 'A touch of glitter on one nail for a subtle sparkle.',
       },
+      {
+        frontImage: '/treatments/level3/level3.8.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
+      {
+        frontImage: '/treatments/level3/level3.9.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
+      {
+        frontImage: '/treatments/level3/level3.10.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
+      {
+        frontImage: '/treatments/level3/level3.11.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
+      {
+        frontImage: '/treatments/level3/level3.12.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
+      {
+        frontImage: '/treatments/level3/level3.13.jpeg',
+        title: 'Subtle Glitter Accent',
+        description: 'A touch of glitter on one nail for a subtle sparkle.',
+      },
     ],
   },
   {
@@ -160,6 +235,31 @@ export const categories: CategoryData[] = [
       },
       {
         frontImage: '/treatments/level4/level4.6.png',
+        title: 'Gemstone Encrusted Design',
+        description: 'Luxurious design featuring carefully placed gemstones and crystals.',
+      },
+      {
+        frontImage: '/treatments/level4/level4.7.jpeg',
+        title: 'Gemstone Encrusted Design',
+        description: 'Luxurious design featuring carefully placed gemstones and crystals.',
+      },
+      {
+        frontImage: '/treatments/level4/level4.8.jpeg',
+        title: 'Gemstone Encrusted Design',
+        description: 'Luxurious design featuring carefully placed gemstones and crystals.',
+      },
+      {
+        frontImage: '/treatments/level4/level4.9.jpeg',
+        title: 'Gemstone Encrusted Design',
+        description: 'Luxurious design featuring carefully placed gemstones and crystals.',
+      },
+      {
+        frontImage: '/treatments/level4/level4.10.jpeg',
+        title: 'Gemstone Encrusted Design',
+        description: 'Luxurious design featuring carefully placed gemstones and crystals.',
+      },
+      {
+        frontImage: '/treatments/level4/level4.11.jpeg',
         title: 'Gemstone Encrusted Design',
         description: 'Luxurious design featuring carefully placed gemstones and crystals.',
       },
