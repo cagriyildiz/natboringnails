@@ -4,6 +4,7 @@ import Image from 'next/image';
 import ReactMarkdown, {Components} from "react-markdown";
 import Pricing from "@/components/pricing/Pricing";
 import {Metadata} from "next";
+import ReadyToBook from "@/components/book/ReadyToBook";
 
 export const metadata: Metadata = {
   title: 'BIAB Manicure in Haarlem',
@@ -166,6 +167,10 @@ const BiabServicePage: React.FC = () => {
           subtitle="Discover the investment in stronger, more beautiful nails. All prices include meticulous preparation and a flawless finish."
           priceItems={biabPrices}
         />
+
+        <ReadyToBook title="Ready for Stronger, Natural Nails"
+                     subtitle="Experience the perfect blend of durability and elegance. Book your BIAB session in Haarlem today to start your journey toward healthy, natural nail growth that lasts."
+                     button="Book Your BIAB Session"/>
       </main>
     </div>
   );

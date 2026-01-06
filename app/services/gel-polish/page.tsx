@@ -3,6 +3,7 @@ import Banner from "@/components/banner/Banner";
 import ReactMarkdown from "react-markdown";
 import Pricing from "@/components/pricing/Pricing";
 import {Metadata} from "next";
+import ReadyToBook from "@/components/book/ReadyToBook";
 
 export const metadata: Metadata = {
   title: 'Gel Polish Manicure Haarlem',
@@ -93,6 +94,12 @@ const GelPolishServicePage: React.FC = () => {
           priceItems={gelPolishTypes}
           className="bg-white"
         />
+
+        <ReadyToBook title="Are you ready for some serious shine?"
+                     subtitle="Treat yourself to a flawless Gel Polish manicure that stays glossy and chip-free for weeks. Click below to book your appointment in Haarlem and pick your favorite shade from my extensive collection."
+                     button="Book Gel Polish Treatment"
+                     className="bg-gray-50"/>
+
       </main>
     </div>
   );

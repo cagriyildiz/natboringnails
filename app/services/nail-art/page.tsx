@@ -3,6 +3,7 @@ import Banner from "@/components/banner/Banner";
 import ReactMarkdown from "react-markdown";
 import Pricing from "@/components/pricing/Pricing";
 import {Metadata} from "next";
+import ReadyToBook from "@/components/book/ReadyToBook";
 
 export const metadata: Metadata = {
   title: 'Custom Nail Art Services in Haarlem',
@@ -90,6 +91,11 @@ const NailArtServicePage: React.FC = () => {
           priceItems={nailArtLevels}
           className="bg-white"
         />
+
+        <ReadyToBook title="Excited to bring a unique vision to life?"
+                     subtitle="I’m so excited to help you express your unique style through bespoke designs! Whether you have a specific vision in mind or want to collaborate on something completely new, let's create a tiny masterpiece that’s uniquely you."
+                     button="Book Your Custom Nail Design"
+                     className="bg-gray-50"/>
 
       </main>
     </div>

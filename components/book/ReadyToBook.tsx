@@ -4,19 +4,21 @@ import Link from "next/link";
 interface ReadyToBookProps {
   title?: string,
   subtitle?: string,
-  button?: string
+  button?: string,
+  className?: string;
 }
 
 const ReadyToBook = (
   {
     title = 'Reserve Your Appointment',
     subtitle = 'Click the button below to schedule your personalized nail artistry appointment in Haarlem, North Holland, Netherlands.',
-    button = 'Book Now'
+    button = 'Book Now',
+    className,
   }: ReadyToBookProps) => {
   const bookingUrl = "https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600";
 
   return (
-    <section className="py-16 md:px-8 dark:bg-gray-800 text-center mt-12">
+    <section className={`${className} py-16 md:px-8 dark:bg-gray-800 text-center mt-12`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <h2 className="text-3xl font-kindred font-bold text-gray-900 dark:text-white mb-6">
           {title}
