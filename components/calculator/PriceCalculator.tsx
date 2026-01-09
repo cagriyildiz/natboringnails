@@ -8,7 +8,7 @@ import {
   IconChevronRight,
   IconEraser,
   IconX,
-  IconPhotoOff, IconMinus, IconSparkles, IconCircleX, IconBrushOff
+  IconBrushOff
 } from '@tabler/icons-react';
 
 const PRICES = {
@@ -129,7 +129,7 @@ const PriceCalculator = () => {
 
       <header className="flex justify-between items-end mb-10 px-4">
         <div>
-          <h2 className="text-4xl font-kindred font-bold text-stone-800 dark:text-white">The Set Builder</h2>
+          <h2 className="text-4xl font-kindred font-bold text-stone-800 dark:text-white">Price Estimator</h2>
         </div>
         <button
           onClick={reset}
