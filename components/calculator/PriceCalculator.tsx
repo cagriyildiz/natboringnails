@@ -55,7 +55,7 @@ const PriceCalculator = () => {
     art: ''
   });
 
-  const bookingRef = useRef<HTMLDivElement>(null);
+  const summaryRef = useRef<HTMLDivElement>(null);
 
   const isBookable = isRemovalOnly ||
     (selections.base === 'manicure') ||
@@ -65,7 +65,7 @@ const PriceCalculator = () => {
     if (isBookable) {
       // Small timeout ensures the button is rendered in the DOM before we scroll
       setTimeout(() => {
-        bookingRef.current?.scrollIntoView({
+        summaryRef.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'center'
         });
@@ -415,7 +415,7 @@ const PriceCalculator = () => {
             </div>
           </div>
 
-          <aside className="lg:col-span-5 sticky top-10 self-start">
+          <aside ref={summaryRef} className="lg:col-span-5 sticky top-10 self-start">
             <div
               className="bg-stone-50/50 dark:bg-gray-800/40 p-10 rounded-[3rem] border border-stone-100 dark:border-gray-700 transition-all">
               <h4 className="text-xl font-bold mb-8 text-stone-800 dark:text-white">Estimation Summary</h4>
@@ -441,7 +441,7 @@ const PriceCalculator = () => {
                 )}
               </div>
 
-              <div ref={bookingRef} className="mt-12 pt-8 border-t border-stone-200 dark:border-gray-700">
+              <div className="mt-12 pt-8 border-t border-stone-200 dark:border-gray-700">
                 {isRemovalOnly && (
                   <p className="mb-4 text-[11px] leading-relaxed text-stone-500 italic bg-stone-100 dark:bg-gray-900/50 p-3 rounded-xl border border-stone-200 dark:border-gray-800 animate-in fade-in slide-in-from-top-1">
                     * Removal services must be combined with a manicure to ensure nail health and a clean finish.
