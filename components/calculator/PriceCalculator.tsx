@@ -67,7 +67,7 @@ const PriceCalculator = () => {
       setTimeout(() => {
         summaryRef.current?.scrollIntoView({
           behavior: 'smooth',
-          block: 'center'
+          block: 'nearest'
         });
       }, 100);
     }
