@@ -148,7 +148,7 @@ const PriceCalculator = () => {
             onClick={() => setActiveInfo(null)}
           >
             <div
-              className="bg-white rounded-none sm:rounded-[3rem] relative w-full h-[100vh] sm:h-auto sm:max-w-5xl sm:max-h-[90vh] overflow-y-auto shadow-none sm:shadow-2xl border border-stone-100 relative"
+              className="bg-white rounded-none sm:rounded-[3rem] relative w-full h-[95vh] sm:h-auto sm:max-w-5xl sm:max-h-[90vh] overflow-y-auto shadow-none sm:shadow-2xl border border-stone-100 relative"
               onClick={(e) => e.stopPropagation()}
             >
 
