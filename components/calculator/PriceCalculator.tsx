@@ -249,7 +249,7 @@ const PriceCalculator = () => {
                     className="w-12 h-12 rounded-2xl bg-stone-100 dark:bg-gray-800 text-stone-600 dark:text-gray-400 flex items-center justify-center text-sm font-black">
                     0{step}
                   </span>
-                  <h3 className="text-3xl font-bold text-stone-800 dark:text-white">
+                  <h3 className="text-xl font-bold text-stone-800 dark:text-white">
                     {step === 1 ? 'Removal' : step === 2 ? 'Foundation' : 'Nail Art'}
                   </h3>
                 </div>
@@ -257,15 +257,25 @@ const PriceCalculator = () => {
 
               {/* Next Step Arrow - Styled exactly like the previous button */}
               {(step < 3 && !isRemovalOnly && !isManicureSelected) && (
-                <button
-                  disabled={(step === 2 && !selections.base)}
-                  onClick={handleNextAction}
-                  className={`p-3 rounded-2xl bg-stone-50 hover:bg-primary hover:text-white dark:bg-gray-800 text-stone-500 transition-all active:scale-95 group cursor-pointer ${
-                  (isRemovalOnly || step === 2 && isManicureSelected) ? 'bg-primary border-primary text-white shadow-xl shadow-primary/20' : ''
-                  } disabled:opacity-30 disabled:cursor-not-allowed`}
-                >
-                  <IconChevronRight size={24}/>
-                </button>
+                <div className={`relative p-[1.5px] overflow-hidden rounded-2xl transition-all duration-300 ${
+                  (step === 2 && !selections.base) ? 'opacity-30' : 'bg-stone-900 dark:bg-stone-950 shadow-lg'
+                }`}>
+
+                  {/* The Beam - Only visible if the button is not disabled */}
+                  {!(step === 2 && !selections.base) && (
+                    <span className="absolute inset-[-1000%] animate-border-beam small-beam-gradient opacity-80" />
+                  )}
+
+                  <button
+                    disabled={(step === 2 && !selections.base)}
+                    onClick={handleNextAction}
+                    className={`relative p-2.5 rounded-[calc(1rem-1.5px)] bg-white text-stone-800 transition-all active:scale-95 group cursor-pointer ${
+                      (isRemovalOnly || step === 2 && isManicureSelected) ? 'bg-primary border-primary text-white shadow-xl shadow-primary/20' : ''
+                    } disabled:opacity-30 disabled:cursor-not-allowed`}
+                  >
+                    <IconChevronRight size={24}/>
+                  </button>
+                </div>
               )}
             </div>
 
