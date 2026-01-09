@@ -144,22 +144,22 @@ const PriceCalculator = () => {
 
         {activeInfo && (
           <div
-            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-md animate-in fade-in duration-300"
+            className="fixed inset-0 z-[100] flex items-center justify-center sm:p-4 bg-stone-900/60 backdrop-blur-sm animate-in fade-in zoom-in-95 slide-in-from-bottom-10 sm:slide-in-from-bottom-0 duration-300"
             onClick={() => setActiveInfo(null)}
           >
             <div
-              className="bg-white rounded-[3rem] max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-stone-100 relative"
+              className="bg-white rounded-none sm:rounded-[3rem] relative w-full h-[100vh] sm:h-auto sm:max-w-5xl sm:max-h-[90vh] overflow-y-auto shadow-none sm:shadow-2xl border border-stone-100 relative"
               onClick={(e) => e.stopPropagation()}
             >
 
-              <button onClick={() => setActiveInfo(null)} className="absolute top-6 right-6 z-20 p-2 bg-white/80 backdrop-blur-sm rounded-full text-stone-400 hover:text-stone-600 shadow-sm transition-all cursor-pointer">
+              <button onClick={() => setActiveInfo(null)} className="absolute top-4 right-4 z-50 p-3 rounded-full bg-stone-100/80 backdrop-blur-md text-stone-500 hover:text-primary transition-all active:scale-95 cursor-pointer">
                 <IconX size={24}/>
               </button>
 
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* LEFT: Inspiration Gallery (Regular Grid) */}
                 <div
-                  className="p-8 lg:p-12 bg-stone-50 border-r border-stone-100">
+                  className="p-8 sm:p-12 bg-stone-50 border-r border-stone-100">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-6">Visual
                     Inspiration</p>
 
@@ -195,10 +195,10 @@ const PriceCalculator = () => {
                 {/* RIGHT: Service Details */}
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   {/* ... (details text and button same as before) ... */}
-                  <h5 className="text-4xl font-bold mb-4 text-stone-800 capitalize">
+                  <h5 className="text-2xl sm:text-4xl font-bold mb-4 text-stone-800 capitalize">
                     {ART_DETAILS[activeInfo as keyof typeof ART_DETAILS].name}
                   </h5>
-                  <p className="text-lg text-stone-600 mb-10 leading-relaxed italic">
+                  <p className="text-md sm:text-lg text-stone-600 mb-10 leading-relaxed italic">
                     {ART_DETAILS[activeInfo as keyof typeof ART_DETAILS].desc}
                   </p>
 
@@ -220,7 +220,7 @@ const PriceCalculator = () => {
                       setSkipArt(false);
                       setActiveInfo(null);
                     }}
-                    className="w-full py-5 bg-primary text-white rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 cursor-pointer hover:bg-primary/90 transition-all"
+                    className="w-full py-5 sm:py-5 bg-primary text-white rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 cursor-pointer hover:bg-primary/90 transition-all"
                   >
                     Select This Level
                   </button>
@@ -366,22 +366,35 @@ const PriceCalculator = () => {
                         {Object.entries(PRICES.art).map(([level, price]) => (
                           <div
                             key={level}
-                            onClick={() => { setSelections({...selections, art: level}); setSkipArt(false); }}
-                            className={`p-4 sm:p-7 rounded-[1.5rem] sm:rounded-[2rem] border-2 flex gap-3 sm:gap-4 items-center justify-between transition-all cursor-pointer ${selections.art === level && !skipArt ? 'border-primary bg-primary/5 shadow-sm shadow-primary/5' : 'border-stone-100 bg-white'}`}
+                            onClick={() => {
+                              setSelections({...selections, art: level});
+                              setSkipArt(false);
+                            }}
+                            className={`relative p-4 sm:p-7 rounded-[1.5rem] sm:rounded-[2rem] border-2 flex gap-3 sm:gap-4 items-center justify-between transition-all cursor-pointer ${selections.art === level && !skipArt ? 'border-primary bg-primary/5 shadow-sm shadow-primary/5' : 'border-stone-100 bg-white'}`}
                           >
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setActiveInfo(level);
+                              }}
+                              className="absolute top-0 right-0 p-2 sm:p-3 rounded-xl text-stone-400 hover:text-primary transition-colors z-10 cursor-pointer"
+                            >
+                              <IconInfoCircle size={18}/>
+                            </button>
+
                             <div className="flex gap-6 items-center">
                               <div>
                             <span className="font-bold text-lg text-stone-800">
                               {ART_DETAILS[level as keyof typeof ART_DETAILS].name}
                             </span>
-                                <p className="text-xs text-stone-500 mt-1 italic">{ART_DETAILS[level as keyof typeof ART_DETAILS].desc}</p>
+                                <p
+                                  className="text-xs text-stone-500 mt-1 italic">{ART_DETAILS[level as keyof typeof ART_DETAILS].desc}</p>
                               </div>
                             </div>
-                            <div className="flex items-center gap-4">
-                              <span className="font-bold text-primary text-xl">€{price}</span>
-                              <button onClick={(e) => { e.stopPropagation(); setActiveInfo(level); }} className="p-3 rounded-xl bg-stone-50 text-stone-400 hover:text-primary border border-stone-100 active:scale-90 transition-all cursor-pointer">
-                                <IconInfoCircle size={22}/>
-                              </button>
+                            <div className="flex items-center">
+                              <span className="font-bold text-primary text-xl sm:text-2xl">
+                                €{price}
+                              </span>
                             </div>
                           </div>
                         ))}
@@ -390,8 +403,9 @@ const PriceCalculator = () => {
                   </div>
 
                   {/* 2. THE CHECKBOX: This will move up automatically */}
-                  <div className={`p-5 bg-stone-50 rounded-[2rem] border flex items-center justify-between transition-all duration-500 ${
-                    skipArt ? 'border-primary bg-primary/5' : 'border-stone-100'
+                  <div
+                    className={`p-5 bg-stone-50 rounded-[2rem] border flex items-center justify-between transition-all duration-500 ${
+                      skipArt ? 'border-primary bg-primary/5' : 'border-stone-100'
                   }`}>
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
