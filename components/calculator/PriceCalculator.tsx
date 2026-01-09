@@ -230,7 +230,7 @@ const PriceCalculator = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
           <div className="lg:col-span-7">
             <div className="flex items-center justify-between gap-4 mb-10 w-full">
               <div className="flex items-center gap-4">
@@ -276,7 +276,7 @@ const PriceCalculator = () => {
               )}
             </div>
 
-            <div className="min-h-[400px]">
+            <div className="md:min-h-[400px]">
               {step === 1 && (
                 <div className="space-y-8 animate-in fade-in slide-in-from-left-4">
                   <div className="grid grid-cols-1 gap-4">
