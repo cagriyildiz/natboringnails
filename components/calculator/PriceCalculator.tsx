@@ -129,7 +129,7 @@ const PriceCalculator = () => {
 
       <header className="flex justify-between items-end mb-10 px-4">
         <div>
-          <h2 className="text-4xl font-kindred font-bold text-stone-800 dark:text-white">Price Estimator</h2>
+          <h2 className="text-2xl sm:text-4xl font-kindred font-bold text-stone-800 dark:text-white">Price Estimator</h2>
         </div>
         <button
           onClick={reset}
