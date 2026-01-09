@@ -67,7 +67,7 @@ const PriceCalculator = () => {
       setTimeout(() => {
         bookingRef.current?.scrollIntoView({
           behavior: 'smooth',
-          block: 'nearest'
+          block: 'center'
         });
       }, 100);
     }
