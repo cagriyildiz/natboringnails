@@ -313,7 +313,7 @@ const PriceCalculator = () => {
                           <p className="font-bold text-stone-800 capitalize text-lg">
                             {id === 'none' ? 'No Removal' : id === 'own' ? 'My Previous Work' : 'Other Salon Work'}
                           </p>
-                          <p className="text-xs text-stone-500 italic mt-1">
+                          <p className="text-sm leading-relaxed text-stone-600 mt-1.5 italic">
                             {id === 'none' && 'No previous product to remove. Ready for immediate prep and application.'}
                             {id === 'own' && 'Welcome back! Since I know exactly what’s on your nails, I can remove it quickly and safely while keeping your natural nail plate in perfect condition.'}
                             {id === 'other' && 'Safe removal of external salon work. Extra time is required to assess and remove unknown materials responsibly.'}
@@ -356,7 +356,7 @@ const PriceCalculator = () => {
                         <div className="text-left">
                           <p
                             className="font-bold text-stone-800 capitalize text-lg">{id.replace('_', ' ')}</p>
-                          <p className="text-xs text-stone-500 italic mt-1">
+                          <p className="text-sm leading-relaxed text-stone-600 mt-1.5 italic">
                             {id === 'manicure' && 'Detailed care focusing on nail health. Features precision shaping and meticulous cuticle refinement for a crisp, professional finish.'}
                             {id === 'gel_polish' && 'Classic color with a high-shine finish. Ideal for those with strong natural nails who want vibrant, long-lasting color and flexibility without added thickness.'}
                             {id === 'biab_natural' && 'The \'Builder In A Bottle\' essentials. Provides a strong, protective layer to help your natural nails grow. Finished in a beautiful nude or sheer shade for a clean, structural look.'}
@@ -408,7 +408,7 @@ const PriceCalculator = () => {
                               {ART_DETAILS[level as keyof typeof ART_DETAILS].name}
                             </span>
                                 <p
-                                  className="text-xs text-stone-500 mt-1 italic">{ART_DETAILS[level as keyof typeof ART_DETAILS].desc}</p>
+                                  className="text-sm leading-relaxed text-stone-600 mt-1.5 italic">{ART_DETAILS[level as keyof typeof ART_DETAILS].desc}</p>
                               </div>
                             </div>
                             <div className="flex items-center">
