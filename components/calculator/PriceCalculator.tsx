@@ -17,6 +17,15 @@ const PRICES = {
   art: { level1: 10, level2: 15, level3: 20, level4: 30 }
 };
 
+const FRESHA_SERVICE_IDS = {
+  'removal': 'oiid=sv%3A25953377',
+  'removal_other': 'oiid=sv%3A25953376',
+  'manicure': 'oiid=sv%3A25952924',
+  'gel_polish': 'oiid=sv%3A25952927',
+  'biab_natural': 'oiid=sv%3A25952934',
+  'biab_color': 'oiid=sv%3A25952939',
+}
+
 const ART_DETAILS = {
   level1: {
     name: "Almost Boring",
@@ -116,13 +125,22 @@ const PriceCalculator = () => {
     setSkipArt(false);
   };
 
-  const handleNextAction = () => {
-    if (isRemovalOnly || step === 2 && isManicureSelected || step === 3) {
-      window.open("https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600", "_blank");
-    } else {
-      setStep(step + 1);
+  const handleBooking = () => {
+    const baseUrl = 'https://www.fresha.com/book-now/natboringnails-oh8dausv/services?lid=2640443&eid=4655459&share=true&pId=2556600'
+    let serviceId = ''
+    if (isBookable) {
+      if (isRemovalOnly) {
+        if (selections.removal === 'own') {
+          serviceId = FRESHA_SERVICE_IDS['removal']
+        } else {
+          serviceId = FRESHA_SERVICE_IDS['removal_other']
+        }
+      } else {
+        serviceId = FRESHA_SERVICE_IDS[selections.base as keyof typeof FRESHA_SERVICE_IDS]
+      }
+      window.open(`${baseUrl}&${serviceId}`, "");
     }
-  };
+  }
 
   return (
     <section className="max-w-6xl mx-auto mt-32">
@@ -267,7 +285,7 @@ const PriceCalculator = () => {
 
                   <button
                     disabled={(step === 2 && !selections.base)}
-                    onClick={handleNextAction}
+                    onClick={() => setStep(step + 1)}
                     className="relative p-2 sm:p-3 rounded-[calc(0.75rem-1.5px)] sm:rounded-[calc(1rem-1.5px)] bg-white text-stone-800 transition-all active:scale-95 group cursor-pointer"
                   >
                     <IconChevronRight size={20} className="sm:w-6 sm:h-6"/>
@@ -467,7 +485,7 @@ const PriceCalculator = () => {
 
                 {isBookable ? (
                   <button
-                    onClick={() => window.open("https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600", "_blank")}
+                    onClick={handleBooking}
                     className="w-full py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all cursor-pointer bg-primary border-2 border-primary text-white shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 animate-in fade-in zoom-in-95 duration-300"
                   >
                     {isRemovalOnly ? 'Book Removal Only' : isManicureSelected ? 'Book Manicure' : 'Book This Set'}
