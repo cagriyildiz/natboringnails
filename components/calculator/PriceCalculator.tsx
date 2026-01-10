@@ -13,7 +13,7 @@ import {
 
 const PRICES = {
   removal: { none: 0, own: 10, other: 15 },
-  base: { manicure: 30, gel_polish: 45, biab_natural: 65, biab_color: 75 },
+  base: { manicure: 30, gel_polish: 45, biab_natural: 65, biab_color: 75, gel_x: 80 },
   art: { level1: 10, level2: 15, level3: 20, level4: 30 }
 };
 
@@ -24,6 +24,7 @@ const FRESHA_SERVICE_IDS = {
   'gel_polish': 'oiid=sv%3A25952927',
   'biab_natural': 'oiid=sv%3A25952934',
   'biab_color': 'oiid=sv%3A25952939',
+  'gel_x': 'oiid=sv%3A23862253',
 }
 
 const ART_DETAILS = {
@@ -268,7 +269,7 @@ const PriceCalculator = () => {
                     0{step}
                   </span>
                   <h3 className="text-xl sm:text-3xl font-bold text-stone-800 transition-all">
-                    {step === 1 ? 'Removal' : step === 2 ? 'Foundation' : 'Nail Art'}
+                    {step === 1 ? 'Removal' : step === 2 ? 'Base' : 'Nail Art'}
                   </h3>
                 </div>
               </div>
@@ -360,6 +361,7 @@ const PriceCalculator = () => {
                             {id === 'gel_polish' && 'Classic color with a high-shine finish. Ideal for those with strong natural nails who want vibrant, long-lasting color and flexibility without added thickness.'}
                             {id === 'biab_natural' && 'The \'Builder In A Bottle\' essentials. Provides a strong, protective layer to help your natural nails grow. Finished in a beautiful nude or sheer shade for a clean, structural look.'}
                             {id === 'biab_color' && 'The best of both worlds. You get the maximum strength and reinforcement of BIAB, topped with your choice of gel color. Durability meets total creative freedom.'}
+                            {id === 'gel_x' && 'The ultimate solution for instant length and perfect shape. These are full-coverage soft gel extensions that are cured onto your natural nail. They feel light, look incredibly natural, and provide a strong canvas for any nail art without the thickness of traditional acrylics.'}
                           </p>
                         </div>
                         <span className="font-bold text-stone-800 text-xl">€{price}</span>
