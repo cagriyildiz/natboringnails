@@ -10,6 +10,7 @@ import {
   IconX,
   IconBrushOff
 } from '@tabler/icons-react';
+import {sendGAEvent} from "@next/third-parties/google";
 
 const PRICES = {
   removal: { none: 0, own: 10, other: 15 },
@@ -103,6 +104,12 @@ const PriceCalculator = () => {
 
   const isManicureSelected = selections.base === 'manicure';
 
+  const buttonLabel = isRemovalOnly
+    ? 'Book Removal Only'
+    : isManicureSelected
+      ? 'Book Manicure'
+      : 'Book This Set';
+
   const currentRemovalPrice = PRICES.removal[selections.removal as keyof typeof PRICES.removal];
   const currentBasePrice = PRICES.base[selections.base as keyof typeof PRICES.base] || 0;
 
@@ -126,6 +133,14 @@ const PriceCalculator = () => {
     setSkipArt(false);
   };
 
+  const trackBookingClick = () => {
+    sendGAEvent('event', 'click_booking_cta', {
+      event_category: 'Conversion',
+      event_label: buttonLabel,
+      page_path: window.location.pathname,
+    });
+  };
+
   const handleBooking = () => {
     const baseUrl = 'https://www.fresha.com/book-now/natboringnails-oh8dausv/services?lid=2640443&eid=4655459&share=true&pId=2556600'
     let serviceId = ''
@@ -139,6 +154,7 @@ const PriceCalculator = () => {
       } else {
         serviceId = FRESHA_SERVICE_IDS[selections.base as keyof typeof FRESHA_SERVICE_IDS]
       }
+      trackBookingClick()
       window.open(`${baseUrl}&${serviceId}`, "");
     }
   }
@@ -490,7 +506,7 @@ const PriceCalculator = () => {
                     onClick={handleBooking}
                     className="w-full py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all cursor-pointer bg-primary border-2 border-primary text-white shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 animate-in fade-in zoom-in-95 duration-300"
                   >
-                    {isRemovalOnly ? 'Book Removal Only' : isManicureSelected ? 'Book Manicure' : 'Book This Set'}
+                    {buttonLabel}
                     <IconChevronRight size={22}/>
                   </button>
                 ) : (

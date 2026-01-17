@@ -9,7 +9,9 @@ import {
   FaEnvelope,
 } from 'react-icons/fa';
 
-import { footerNavLinks, socialLinks, contactInfo } from './data'; // Adjust path as needed
+import { footerNavLinks, socialLinks, contactInfo } from './data';
+import {sendGAEvent} from "@next/third-parties/google";
+import ExternalLink from "@/components/footer/TrackedLink"; // Adjust path as needed
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,6 +28,17 @@ export default function Footer() {
       default:
         return null;
     }
+  };
+
+  const trackBookingClick = (linkName: string) => {
+    if (linkName !== 'Book Now') {
+      return;
+    }
+    sendGAEvent('event', 'click_booking_cta', {
+      event_category: 'Conversion',
+      event_label: linkName,
+      page_path: window.location.pathname,
+    });
   };
 
   return (
@@ -69,17 +82,16 @@ export default function Footer() {
                 if (link.isButton) {
                   return (
                     <li key={link.name} className="flex justify-center md:justify-start">
-                      <Link
+                      <ExternalLink
                         href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        name={link.name}
                         className="relative md:-ml-2 inline-flex items-center justify-center p-[1px] overflow-hidden rounded-md group"
                       >
                         <span className="absolute inset-[-1000%] animate-border-beam small-beam-gradient" />
                         <span className="relative px-2 py-1 bg-gray-800 rounded-[5px] transition-colors group-hover:text-white">
                           {link.name}
                         </span>
-                      </Link>
+                      </ExternalLink>
                     </li>
                   );
                 }
