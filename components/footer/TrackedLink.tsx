@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import {ReactNode} from "react";
-import {sendGAEvent} from "@next/third-parties/google";
+import {sendGTMEvent} from "@next/third-parties/google";
 
 interface TrackedLinkProps {
   href: string;
@@ -16,10 +16,10 @@ export default function TrackedLink({ href, name, children, className }: Tracked
     if (buttonLabel !== 'Book Now') {
       return;
     }
-    sendGAEvent('event', 'click_booking_cta', {
-      event_category: 'Conversion',
-      event_label: buttonLabel,
-      page_path: window.location.pathname,
+    sendGTMEvent({
+      event: 'click_booking_cta',
+      category: 'Conversion',
+      label: buttonLabel,
     });
   };
 

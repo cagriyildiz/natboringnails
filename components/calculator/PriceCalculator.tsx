@@ -10,7 +10,7 @@ import {
   IconX,
   IconBrushOff
 } from '@tabler/icons-react';
-import {sendGAEvent} from "@next/third-parties/google";
+import {sendGTMEvent} from "@next/third-parties/google";
 
 const PRICES = {
   removal: { none: 0, own: 10, other: 15 },
@@ -134,10 +134,10 @@ const PriceCalculator = () => {
   };
 
   const trackBookingClick = () => {
-    sendGAEvent('event', 'click_booking_cta', {
-      event_category: 'Conversion',
-      event_label: buttonLabel,
-      page_path: window.location.pathname,
+    sendGTMEvent({
+      event: 'click_booking_cta',
+      category: 'Conversion',
+      label: buttonLabel,
     });
   };
 

@@ -1,17 +1,17 @@
 import React from "react";
 import Image from 'next/image';
 import Link from "next/link";
-import {sendGAEvent} from "@next/third-parties/google";
+import {sendGTMEvent} from "@next/third-parties/google";
 
 export default function HeroV2() {
   const bookingButtonText = "Book Now";
   const bookingUrl = "https://www.fresha.com/book-now/natboringnails-oh8dausv/all-offer?share=true&pId=2556600";
 
   const trackBookingClick = () => {
-    sendGAEvent('event', 'click_booking_cta', {
-      event_category: 'Conversion',
-      event_label: bookingButtonText,
-      page_path: window.location.pathname,
+    sendGTMEvent({
+      event: 'click_booking_cta',
+      category: 'Conversion',
+      label: bookingButtonText,
     });
   };
 

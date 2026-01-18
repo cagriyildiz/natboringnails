@@ -10,7 +10,6 @@ import {
 } from 'react-icons/fa';
 
 import { footerNavLinks, socialLinks, contactInfo } from './data';
-import {sendGAEvent} from "@next/third-parties/google";
 import ExternalLink from "@/components/footer/TrackedLink"; // Adjust path as needed
 
 export default function Footer() {
@@ -28,17 +27,6 @@ export default function Footer() {
       default:
         return null;
     }
-  };
-
-  const trackBookingClick = (linkName: string) => {
-    if (linkName !== 'Book Now') {
-      return;
-    }
-    sendGAEvent('event', 'click_booking_cta', {
-      event_category: 'Conversion',
-      event_label: linkName,
-      page_path: window.location.pathname,
-    });
   };
 
   return (

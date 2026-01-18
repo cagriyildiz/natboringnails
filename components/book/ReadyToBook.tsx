@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from "next/link";
-import { sendGAEvent } from '@next/third-parties/google';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 interface ReadyToBookProps {
   title?: string,
@@ -22,10 +22,10 @@ const ReadyToBook = (
 
   // This function sends the data to Google Analytics
   const trackBookingClick = () => {
-    sendGAEvent('event', 'click_booking_cta', {
-      event_category: 'Conversion',
-      event_label: button,
-      page_path: window.location.pathname,
+    sendGTMEvent({
+      event: 'click_booking_cta',
+      category: 'Conversion',
+      label: button,
     });
   };
 
